@@ -31,7 +31,7 @@
                         <div class="card-header">
                             <h3 class="card-title">List Data</h3>
                             <div class="card-tools">
-                                <a href="{{ url('/users/create') }}">
+                                <a href="{{ url('/backend/users/create') }}">
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i>
                                         Tambah
                                         Data
@@ -46,7 +46,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Username</th>
                                             <th>Email</th>
                                             <th>Level</th>
                                             <th>Aksi</th>
@@ -58,7 +57,6 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>Username</th>
                                             <th>Email</th>
                                             <th>Level</th>
                                             <th>Aksi</th>

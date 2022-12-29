@@ -25,8 +25,11 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-group mb-3">
-                        <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
+                        <!-- <input id="username" type="text" class="form-control @error('username') is-invalid @enderror"
                             name="username" value="{{ old('username') }}" required autocomplete="new-username"
+                            autofocus> -->
+                        <input id="email" type="text" class="form-control @error('email') is-invalid @enderror"
+                            name="email" value="{{ old('email') }}" required autocomplete="new-email"
                             autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -57,6 +60,9 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="social-auth-links text-center mb-3">
+                                @if(!empty($url))
+                                    <input type="hidden" name="url" value="{{$url}}">
+                                @endif
                                 <button type="submit" class="btn btn-block btn-primary">
                                     Login
                                 </button>

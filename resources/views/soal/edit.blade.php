@@ -20,7 +20,7 @@
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('soal.form')
+                            @include('soal.form_edit')
 
                         </form>
                     </div>
@@ -28,4 +28,7 @@
             </div>
         </div>
     </section>
+@endsection
+@section('js')
+    <script src="{{asset('assets/customjs/soal/edit_soal.js')}}"></script>
 @endsection

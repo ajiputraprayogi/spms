@@ -7,9 +7,12 @@
             {!! $errors->first('jenis_soal', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('jumlah_soal') }}
-            {{ Form::text('jumlah_soal', $soal->jumlah_soal, ['class' => 'form-control' . ($errors->has('jumlah_soal') ? ' is-invalid' : ''), 'placeholder' => 'Jumlah Soal']) }}
-            {!! $errors->first('jumlah_soal', '<div class="invalid-feedback">:message</div>') !!}
+            <label for="">Jumlah Soal ABC</label>
+            <input type="number" name="jumlah_soal_abc" id="jumlah_soal_abc" placeholder="Jumlah Soal ABC" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Jumlah Soal Ya/Tidak</label>
+            <input type="number" name="jumlah_soal_yt" id="jumlah_soal_yt" placeholder="Jumlah Soal Ya/Tidak" class="form-control">
         </div>
         <div class="form-group">
             {{ Form::label('status') }}
@@ -18,18 +21,10 @@
                 <option>Nonaktif</option>
             </select>
         </div>
-        <!-- <div class="form-group">
-            {{ Form::label('status') }}
-            {{ Form::text('status', $soal->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Status']) }}
-            {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
-        </div> -->
-
-        @php
-            $a = array_fill(0, 2, 'soal');
-
-        @endphp
-        @foreach($a as $rowa)
-        @endforeach
+        <div class="form-group">
+            <label for="">Minimal Score</label>
+            <input type="number" name="minimal_score" id="minimal_score" placeholder="Minimal Score" class="form-control">
+        </div>
 
     </div>
     <div class="box-footer mt20">
@@ -41,48 +36,75 @@
         
         <!-- <div class="card card-primary">
             <div class="card-header">
-                Soal
+                Soal ABC
             </div>
             <div class="card-body">
                 <div class="row">
+                    <input type="hidden" name="tipe_soal[]" id="tipe_soal" value="Abc" class="form-control">
                     <div class="col-md-12">
                         <label for="">Soal</label>
-                        <textarea name="" id="" rows="2" class="form-control"></textarea>
+                        <textarea name="soal[]" id="soal" rows="2" class="form-control"></textarea>
                     </div><br>
                     <div class="col-md-6">
-                        <label for="">A</label>
-                        <textarea name="" id="" rows="2" class="form-control"></textarea>
+                        <label for="">A.</label>
+                        <textarea name="a[]" id="a" rows="1" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6">
-                        <label for="">B</label>
-                        <textarea name="" id="" rows="2" class="form-control"></textarea>
+                        <label for="">B.</label>
+                        <textarea name="b[]" id="b" rows="1" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6">
-                        <label for="">C</label>
-                        <textarea name="" id="" rows="2" class="form-control"></textarea>
+                        <label for="">C.</label>
+                        <textarea name="c[]" id="c" rows="1" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6">
-                        <label for="">D</label>
-                        <textarea name="" id="" rows="2" class="form-control"></textarea>
+                        <label for="">D.</label>
+                        <textarea name="d[]" id="d" rows="1" class="form-control"></textarea>
                     </div>
                     <div class="col-md-12"><br>
                         <p style="margin-bottom:2px;">Jawaban :</p>
                     </div>
                     <div class="col-md-1">
-                        <input type="radio" name="jawaban" id="a" value="A">
+                        <input type="radio" name="jawaban[]" id="a" value="A">
                         <label for="a">A</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="radio" name="jawaban" id="b" value="B">
+                        <input type="radio" name="jawaban[]" id="b" value="B">
                         <label for="b">B</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="radio" name="jawaban" id="c" value="C">
+                        <input type="radio" name="jawaban[]" id="c" value="C">
                         <label for="c">C</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="radio" name="jawaban" id="d" value="D">
+                        <input type="radio" name="jawaban[]" id="d" value="D">
                         <label for="d">D</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-warning">
+            <div class="card-header">
+                Soal Ya/Tidak
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <input type="hidden" name="tipe_soal[]" id="tipe_soal" value="YaTidak" class="form-control">
+                    <div class="col-md-12">
+                        <label for="">Soal</label>
+                        <textarea name="soal[]" id="soal[]" rows="2" class="form-control"></textarea>
+                    </div><br>
+                    <div class="col-md-12"><br>
+                        <p style="margin-bottom:2px;">Jawaban :</p>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="radio" name="jawaban[]" id="ya" value="Ya">
+                        <label for="ya">Ya</label>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="radio" name="jawaban[]" id="tidak" value="Tidak">
+                        <label for="tidak">Tidak</label>
                     </div>
                 </div>
             </div>
@@ -90,6 +112,7 @@
 
     </div>
     <div class="box-footer mt20">
+        <button type="button" onclick="back()" class="btn btn-danger">Back</button>
         <button id="buttondua" type="submit" class="btn btn-primary">Submit</button>
     </div>
 </div>

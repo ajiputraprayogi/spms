@@ -32,6 +32,30 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ url('/backend/data-diri') }}" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                    Data Pelamar
+                </p>
+            </a>
+        </li>
+        <!-- <li class="nav-item">
+            <a href="{{ url('/backend/data-pendidikan') }}" class="nav-link">
+                <i class="nav-icon fas fa-ellipsis-h"></i>
+                <p>
+                    Data Pendidikan
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/backend/upload-berkas') }}" class="nav-link">
+                <i class="nav-icon fas fa-ellipsis-h"></i>
+                <p>
+                    Upload Berkas
+                </p>
+            </a>
+        </li> -->
         @if (auth()->user()->can('view-users') ||
             auth()->user()->can('create-users') ||
             auth()->user()->can('edit-users') ||

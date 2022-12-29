@@ -47,6 +47,9 @@
                             </div>
                         </div>
                         <div class="table-responsive">
+                            @if($cari != '')
+                            <p>Search nama <b>"{{$cari}}"</b></p>
+                            @endif
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>

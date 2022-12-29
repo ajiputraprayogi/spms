@@ -47,14 +47,19 @@
                             </div>
                         </div>
                         <div class="table-responsive">
+                            @if($cari != '')
+                            <p>Search jenis soal <b>"{{$cari}}"</b></p>
+                            @endif
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
                                         
 										<th>Jenis Soal</th>
-										<th>Jumlah Soal</th>
+										<th>Jumlah Soal ABC</th>
+										<th>Jumlah Soal Ya/Tidak</th>
 										<th>Status</th>
+                                        <th>Minimal Score</th>
 
                                         <th class="text-center">Aksi</th>
                                     </tr>
@@ -65,8 +70,10 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $soal->jenis_soal }}</td>
-											<td>{{ $soal->jumlah_soal }}</td>
+											<td>{{ $soal->jumlah_soal_abc }}</td>
+											<td>{{ $soal->jumlah_soal_yt }}</td>
 											<td>{{ $soal->status }}</td>
+											<td>{{ $soal->minimal_score }}</td>
 
                                             <td class="text-center">
                                                 <form action="{{ route('soal.destroy',$soal->id) }}" method="POST">

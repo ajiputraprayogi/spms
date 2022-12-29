@@ -26,11 +26,12 @@ class JabatanController extends Controller
             $jabatans = Jabatan::where('nama','like',"%".$cari."%")
             ->paginate();
         }else{
+            $cari = '';
             $perusahaan = DB::table('perusahaan')->get();
             $jabatans = Jabatan::paginate();
         }
 
-        return view('jabatan.index', compact('jabatans','perusahaan'))
+        return view('jabatan.index', compact('jabatans','perusahaan','cari'))
             ->with('i', (request()->input('page', 1) - 1) * $jabatans->perPage());
     }
 
@@ -53,7 +54,7 @@ class JabatanController extends Controller
                 $finalkode = sprintf("KODE".'%03s',$tmp);
             }
         }else{
-            $finalkode = "KODE".$tgl."1";
+            $finalkode = "KODE"."001";
         }
         return view('jabatan.create', compact('jabatan','perusahaan','finalkode'));
     }

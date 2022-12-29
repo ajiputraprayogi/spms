@@ -22,6 +22,12 @@ class HomeController extends Controller
     }
 
     //===============================================================================
+    public function indexAdmin()
+    {
+        return view('homeAdmin');
+    }
+
+    //===============================================================================
     public function editprofile()
     {
         $data = DB::table('users')->where('id',Auth::user()->id)->get();

@@ -24,10 +24,11 @@ class PerusahaanController extends Controller
             $perusahaans = Perusahaan::where('nama','like',"%".$cari."%")
             ->paginate();
         }else{
+            $cari = '';
             $perusahaans = Perusahaan::paginate();
         }
 
-        return view('perusahaan.index', compact('perusahaans'))
+        return view('perusahaan.index', compact('perusahaans','cari'))
             ->with('i', (request()->input('page', 1) - 1) * $perusahaans->perPage());
     }
 
@@ -46,7 +47,7 @@ class PerusahaanController extends Controller
                 $finalkode = sprintf("KODE".'%03s',$tmp);
             }
         }else{
-            $finalkode = "KODE".$tgl."1";
+            $finalkode = "KODE"."001";
         }
         return view('perusahaan.create', compact('perusahaan','finalkode'));
     }

@@ -23,9 +23,9 @@ $(function () {
             {
                 render: function (data, type, row) {
                     if(row['id']!=1){
-                        return '<a href="/roles/' + row['id'] + '/edit" class="btn btn-success"><i class="fa fa-wrench"></i></a> <button class="btn btn-danger" onclick="hapusdata(' + row['id'] + ')"><i class="fa fa-trash"></i></button>'
+                        return '<a href="/backend/roles/' + row['id'] + '/edit" class="btn btn-success"><i class="fa fa-wrench"></i></a> <button class="btn btn-danger" onclick="hapusdata(' + row['id'] + ')"><i class="fa fa-trash"></i></button>'
                     }else{
-                        return '<a href="/roles/' + row['id'] + '/edit" class="btn btn-success"><i class="fa fa-wrench"></i></a>'
+                        return '<a href="/backend/roles/' + row['id'] + '/edit" class="btn btn-success"><i class="fa fa-wrench"></i></a>'
                     }
                     
                 },

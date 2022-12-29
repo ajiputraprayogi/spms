@@ -35,7 +35,7 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="col-md-12 mb-3">
+                        <!-- <div class="col-md-12 mb-3">
                             <label>Username</label>
                             <input id="username" type="text"
                                 class="mt-0 form-control @error('username') is-invalid @enderror" name="username"
@@ -45,7 +45,7 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                             @enderror
-                        </div>
+                        </div> -->
                         <div class="col-md-12 mb-3">
                             <label>Email</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"

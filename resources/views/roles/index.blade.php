@@ -29,7 +29,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Roles</h3>
                             <div class="card-tools">
-                                <a href="{{ url('/roles/create') }}">
+                                <a href="{{ url('/backend/roles/create') }}">
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-plus"></i> Tambah
                                         Data
                                     </button>

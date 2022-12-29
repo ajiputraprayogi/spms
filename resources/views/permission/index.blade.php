@@ -73,7 +73,7 @@
                 <div class="modal-header">
                     <h4 class="modal-title">Tambah Data Permission</h4>
                 </div>
-                <form action="{{ url('/permission') }}" method="post">
+                <form action="{{ url('/backend/permission') }}" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
