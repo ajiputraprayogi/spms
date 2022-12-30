@@ -243,32 +243,32 @@ ul.checkout-bar a {
                                 <input type="hidden" name="user" value="user" readonly>
                                 <div class="form-group">
                                     <label for="">Akun</label>
-                                    <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly>
-                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                    <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nama Lengkap</label>
-                                    <input type="text" name="nama_lengkap" class="form-control">
+                                    <input type="text" name="nama_lengkap" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Tempat Lahir</label>
-                                    <input type="text" name="tempat_lahir" class="form-control">
+                                    <input type="text" name="tempat_lahir" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Tgl Lahir</label>
-                                    <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control">
+                                    <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control">
+                                    <input type="text" name="alamat" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">No. HP / WA</label>
-                                    <input type="text" name="no_hp" class="form-control">
+                                    <input type="text" name="no_hp" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control">
+                                    <input type="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                             
@@ -310,23 +310,23 @@ ul.checkout-bar a {
                           <form method="POST" action="{{ route('data-pendidikan.storeUser') }}" role="form" enctype="multipart/form-data">
                                 @csrf
 
-                                <input type="hidden" name="user" value="user" readonly>
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                <input type="hidden" name="user" value="user" readonly required>
+                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
                                 <div class="form-group">
                                     {{ Form::label('Pendidikan Terakhir') }}
-                                    <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir">
+                                    <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Asal Sekolah / Universitas') }}
-                                    <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah">
+                                    <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Jurusan / Program Studi') }}
-                                    <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan">
+                                    <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Nilai Akhir / IPK') }}
-                                    <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir">
+                                    <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" required>
                                 </div>
                             </div>
                             
@@ -368,47 +368,47 @@ ul.checkout-bar a {
                           <form method="POST" action="{{ route('data-berkas.storeUser') }}" role="form" enctype="multipart/form-data">
                                 @csrf
 
-                                <input type="hidden" name="user" value="user" readonly>
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                <input type="hidden" name="user" value="user" readonly required>
+                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
                                 <div class="form-group">
                                     {{ Form::label('Surat Lamaran') }}
-                                    <input type="file" class="form-control" name="surat_lamaran" id="surat_lamaran">
+                                    <input type="file" class="form-control" name="surat_lamaran" id="surat_lamaran" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Curriculum Vitae (CV)') }}
-                                    <input type="file" class="form-control" name="cv" id="cv">
+                                    <input type="file" class="form-control" name="cv" id="cv" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Pengalaman Kerja') }}
-                                    <input type="file" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja">
+                                    <input type="file" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Portofolio') }}
-                                    <input type="file" class="form-control" name="portofolio" id="portofolio">
+                                    <input type="file" class="form-control" name="portofolio" id="portofolio" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('KK') }}
-                                    <input type="file" class="form-control" name="kk" id="kk">
+                                    <input type="file" class="form-control" name="kk" id="kk" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('KTP') }}
-                                    <input type="file" class="form-control" name="ktp" id="ktp">
+                                    <input type="file" class="form-control" name="ktp" id="ktp" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Ijazah Terakhir') }}
-                                    <input type="file" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir">
+                                    <input type="file" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Transkrip Nilai') }}
-                                    <input type="file" class="form-control" name="transkrip_nilai" id="transkrip_nilai">
+                                    <input type="file" class="form-control" name="transkrip_nilai" id="transkrip_nilai" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('SKCK') }}
-                                    <input type="file" class="form-control" name="skck" id="skck">
+                                    <input type="file" class="form-control" name="skck" id="skck" required>
                                 </div>
                                 <div class="form-group">
                                     {{ Form::label('Foto Terbaru') }}
-                                    <input type="file" class="form-control" name="foto" id="foto">
+                                    <input type="file" class="form-control" name="foto" id="foto" required>
                                 </div>
                             </div>
                             
@@ -420,6 +420,16 @@ ul.checkout-bar a {
                 </div>
                 @endif
                 @if($databerkas > 0 && $datapendidikan > 0 && $databerkas > 0)
+                @section('menu')
+                <li class="nav-item">
+                    <a href="{{ url('/test') }}" class="nav-link">
+                        <i class="nav-icon fas fa-columns"></i>
+                        <p>
+                            Test Soal
+                        </p>
+                    </a>
+                </li>
+                @endsection
                 <div class="col-md-12">
                     <! -- To test add 'active' class and 'visited' class to different li elements -->
                     
@@ -447,7 +457,7 @@ ul.checkout-bar a {
                   ->where('data_diri.user_id', Auth::user()->id)
                   ->first();
                 @endphp
-                <div class="col-md-12 mt-4" id="data_diri">
+                <div class="col-md-12 mt-4" id="data_diri" style="display:none">
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-title">
@@ -534,7 +544,7 @@ ul.checkout-bar a {
                           </form>
                     </div>
                 </div>
-                <div class="col-md-12 mt-4" id="data_berkas" style="display:none">
+                <div class="col-md-12 mt-4" id="data_berkas" style="display:show">
                     <div class="card card-secondary">
                         <div class="card-header">
                             <h3 class="card-title">

@@ -11,6 +11,7 @@ use App\Http\Controllers\SoalController;
 use App\Http\Controllers\DataDiriController;
 use App\Http\Controllers\DataPendidikanController;
 use App\Http\Controllers\UploadBerkasController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
@@ -34,6 +35,8 @@ Route::post('/data-diri', [DataDiriController::class,'store'])->name('data-diri.
 Route::post('/data-pendidikan', [DataPendidikanController::class,'store'])->name('data-pendidikan.storeUser');
 //===========================================================================================Simpan Data Berkas
 Route::post('/data-berkas', [UploadBerkasController::class,'store'])->name('data-berkas.storeUser');
+//===========================================================================================Test
+Route::resource('/test', TestController::class);
 
 
 Route::prefix('backend')->middleware('is_admin')->group(function () {

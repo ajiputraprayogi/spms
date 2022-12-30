@@ -8,6 +8,7 @@
                 </p>
             </a>
         </li>
+        @yield('menu')
         <!-- <li class="nav-item">
             <a href="{{ url('/backend/perusahaan') }}" class="nav-link">
                 <i class="nav-icon fas fa-columns"></i>
