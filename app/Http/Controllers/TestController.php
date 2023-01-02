@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Auth;
 
 /**
  * Class TestController
@@ -21,7 +22,7 @@ class TestController extends Controller
         if($request->has('search')){
             dd('search result');
         }else{
-            $tests = Test::paginate();
+            $tests = Test::where('id_user', Auth::user()->id)->where('status','Belum')->paginate(1);
         }
 
         return view('test.index', compact('tests'))
