@@ -212,20 +212,20 @@ ul.checkout-bar a {
                 @if(!$datadiri > 0 && !$datapendidikan > 0 && !$databerkas > 0)
                 <div class="col-md-12">
                     <! -- To test add 'active' class and 'visited' class to different li elements -->
-                    
+
                   <div class="checkout-wrap mt-0">
                     <ul class="checkout-bar">
 
                       <li class="previus visited">Register & Login</li>
-                      
+
                       <li class="active">Data Diri</li>
-                      
+
                       <li class="next">Data Pendidikan</li>
-                      
+
                       <li class="">Upload Berkas</li>
-                      
+
                       <li class="">Complete</li>
-                        
+
                     </ul>
                   </div>
                 </div>
@@ -242,39 +242,87 @@ ul.checkout-bar a {
                           <div class="card-body">
                             <form method="POST" action="{{ route('data-diri.storeUser') }}" role="form" enctype="multipart/form-data">
                                   @csrf
-  
-                                  <input type="hidden" name="user" value="user" readonly>
-                                  <div class="form-group">
-                                      <!-- <label for="">Akun</label> -->
-                                      <input type="hidden" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
-                                      <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">Nama Lengkap</label>
-                                      <input type="text" name="nama_lengkap" class="form-control" value="{{Auth::user()->name}}" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">Tempat Lahir</label>
-                                      <input type="text" name="tempat_lahir" class="form-control" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">Tgl Lahir</label>
-                                      <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">Alamat</label>
-                                      <input type="text" name="alamat" class="form-control" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">No. HP / WA</label>
-                                      <input type="text" name="no_hp" class="form-control" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="">Email</label>
-                                      <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly required>
-                                  </div>
+
+                                <input type="hidden" name="user" value="user" readonly>
+                                <div class="form-group">
+                                    <!-- <label for="">Akun</label> -->
+                                    <input type="hidden" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Nama Lengkap</label>
+                                    <input type="text" name="nama_lengkap" class="form-control" value="{{Auth::user()->name}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Tempat Lahir</label>
+                                    <input type="text" name="tempat_lahir" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Tgl Lahir</label>
+                                    <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Alamat</label>
+                                    <input type="text" name="alamat" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">No. HP / WA</label>
+                                    <input type="text" name="no_hp" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Email</label>
+                                    <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Nikah</label>
+                                    <select name="nikah" id="nikah" class="form-control">
+                                        <option>Nikah</option>
+                                        <option>Belum</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">Anak ke</label>
+                                            <input type="text" name="anak_ke" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Jumlah Saudara</label>
+                                            <input type="text" name="jumlah_saudara" class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">Tinggi</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" name="tinggi" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">CM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Berat Badan</label>
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" name="tinggi" required>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">KG</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Riwayat Penyakit</label>
+                                    <select name="riwayat_penyakit" id="riwayat_penyakit" class="form-control">
+                                        <option>Tidak Menular</option>
+                                        <option>Menular</option>
+                                    </select>
+                                </div>
                               </div>
-                              
+
                               <div class="card-footer text-right">
                                   <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
                               </div>
@@ -288,78 +336,84 @@ ul.checkout-bar a {
                 @if($datadiri > 0 && !$datapendidikan > 0 && !$databerkas > 0)
                 <div class="col-md-12">
                     <! -- To test add 'active' class and 'visited' class to different li elements -->
-                    
+
                   <div class="checkout-wrap mt-0">
                     <ul class="checkout-bar">
 
                       <li class="previus visited">Register & Login</li>
-                      
+
                       <li class="previous visited">Data Diri</li>
-                      
+
                       <li class="active">Data Pendidikan</li>
-                      
+
                       <li class="next">Upload Berkas</li>
-                      
+
                       <li class="">Complete</li>
-                        
+
                     </ul>
                   </div>
                 </div>
                 <div class="col-md-12 mt-4">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Input Data Pendidikan
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                          <form method="POST" action="{{ route('data-pendidikan.storeUser') }}" role="form" enctype="multipart/form-data">
-                                @csrf
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Input Data Pendidikan
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                  <form method="POST" action="{{ route('data-pendidikan.storeUser') }}" role="form" enctype="multipart/form-data">
+                                        @csrf
 
-                                <input type="hidden" name="user" value="user" readonly required>
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
-                                <div class="form-group">
-                                    {{ Form::label('Pendidikan Terakhir') }}
-                                    <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" required>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Asal Sekolah / Universitas') }}
-                                    <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" required>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Jurusan / Program Studi') }}
-                                    <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Nilai Akhir / IPK') }}
-                                    <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" required>
-                                </div>
+                                        <input type="hidden" name="user" value="user" readonly required>
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                        <div class="form-group">
+                                            {{ Form::label('Pendidikan Terakhir') }}
+                                            <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" required>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Asal Sekolah / Universitas') }}
+                                            <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" required>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Jurusan / Program Studi') }}
+                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Nilai Akhir / IPK') }}
+                                            <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer text-right">
+                                        <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
+                                    </div>
+                                  </form>
                             </div>
-                            
-                            <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
-                            </div>
-                          </form>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 @endif
                 @if($datadiri > 0 && $datapendidikan > 0 && !$databerkas > 0)
                 <div class="col-md-12">
                     <! -- To test add 'active' class and 'visited' class to different li elements -->
-                    
+
                   <div class="checkout-wrap mt-0">
                     <ul class="checkout-bar">
 
                       <li class="previus visited">Register & Login</li>
-                      
+
                       <li class="previous visited">Data Diri</li>
-                      
+
                       <li class="previous visited">Data Pendidikan</li>
-                      
+
                       <li class="active">Upload Berkas</li>
-                      
+
                       <li class="next">Complete</li>
-                        
+
                     </ul>
                   </div>
                 </div>
@@ -417,7 +471,7 @@ ul.checkout-bar a {
                                     <input type="file" class="form-control" name="foto" id="foto" required>
                                 </div>
                             </div>
-                            
+
                             <div class="card-footer text-right">
                                 <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
                             </div>
@@ -438,20 +492,20 @@ ul.checkout-bar a {
                 @endsection
                 <div class="col-md-12">
                     <! -- To test add 'active' class and 'visited' class to different li elements -->
-                    
+
                   <div class="checkout-wrap mt-0">
                     <ul class="checkout-bar">
 
                       <li class="previus visited">Register & Login</li>
-                      
+
                       <li class="previous visited">Data Diri</li>
-                      
+
                       <li class="previous visited">Data Pendidikan</li>
-                      
+
                       <li class="previous visited">Upload Berkas</li>
-                      
+
                       <li class="active">Complete</li>
-                        
+
                     </ul>
 
                   </div>
@@ -464,151 +518,169 @@ ul.checkout-bar a {
                   ->first();
                 @endphp
                 <div class="col-md-12 mt-4" id="data_diri" style="display:none">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Data Diri
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                          <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                @csrf
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Data Diri
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
+                                        @csrf
 
-                                <input type="hidden" name="user" value="user" readonly>
-                                <div class="form-group">
-                                    <label for="">Akun</label>
-                                    <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly>
-                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Nama Lengkap</label>
-                                    <input type="text" name="nama_lengkap" class="form-control" value="{{$data->nama_lengkap}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Tempat Lahir</label>
-                                    <input type="text" name="tempat_lahir" class="form-control" value="{{$data->tempat_lahir}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Tgl Lahir</label>
-                                    <input type="text" id="" name="tgl_lahir" class="form-control" value="{{$data->tgl_lahir}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">No. HP / WA</label>
-                                    <input type="text" name="no_hp" class="form-control" value="{{$data->no_hp}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" value="{{$data->email}}" readonly>
-                                </div>
+                                        <input type="hidden" name="user" value="user" readonly>
+                                        <div class="form-group">
+                                            <label for="">Akun</label>
+                                            <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly>
+                                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Nama Lengkap</label>
+                                            <input type="text" name="nama_lengkap" class="form-control" value="{{$data->nama_lengkap}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Tempat Lahir</label>
+                                            <input type="text" name="tempat_lahir" class="form-control" value="{{$data->tempat_lahir}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Tgl Lahir</label>
+                                            <input type="text" id="" name="tgl_lahir" class="form-control" value="{{$data->tgl_lahir}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Alamat</label>
+                                            <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">No. HP / WA</label>
+                                            <input type="text" name="no_hp" class="form-control" value="{{$data->no_hp}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input type="email" name="email" class="form-control" value="{{$data->email}}" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer text-right">
+                                        <button type="button" onclick="lanjut_datadiri()" class="btn btn-primary">Lanjut</button>
+                                    </div>
+                                  </form>
                             </div>
-                            
-                            <div class="card-footer text-right">
-                                <button type="button" onclick="lanjut_datadiri()" class="btn btn-primary">Lanjut</button>
-                            </div>
-                          </form>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div class="col-md-12 mt-4" id="data_pendidikan" style="display:none">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Data Pendidikan
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                          <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                @csrf
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Data Pendidikan
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
+                                        @csrf
 
-                                <input type="hidden" name="user" value="user" readonly>
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                <div class="form-group">
-                                    {{ Form::label('Pendidikan Terakhir') }}
-                                    <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" value="{{$data->pendidikan_terakhir}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Asal Sekolah / Universitas') }}
-                                    <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" value="{{$data->asal_sekolah}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Jurusan / Program Studi') }}
-                                    <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" value="{{$data->jurusan}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Nilai Akhir / IPK') }}
-                                    <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" value="{{$data->nilai_akhir}}" readonly>
-                                </div>
+                                        <input type="hidden" name="user" value="user" readonly>
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                        <div class="form-group">
+                                            {{ Form::label('Pendidikan Terakhir') }}
+                                            <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" value="{{$data->pendidikan_terakhir}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Asal Sekolah / Universitas') }}
+                                            <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" value="{{$data->asal_sekolah}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Jurusan / Program Studi') }}
+                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" value="{{$data->jurusan}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Nilai Akhir / IPK') }}
+                                            <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" value="{{$data->nilai_akhir}}" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer text-right">
+                                        <button type="button" onclick="kembali_datapendidikan()" class="btn btn-danger float-left">Kembali</button>
+                                        <button type="button" onclick="lanjut_datapendidikan()" class="btn btn-primary">Lanjut</button>
+                                    </div>
+                                  </form>
                             </div>
-                            
-                            <div class="card-footer text-right">
-                                <button type="button" onclick="kembali_datapendidikan()" class="btn btn-danger float-left">Kembali</button>
-                                <button type="button" onclick="lanjut_datapendidikan()" class="btn btn-primary">Lanjut</button>
-                            </div>
-                          </form>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 <div class="col-md-12 mt-4" id="data_berkas" style="display:show">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Data Berkas
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                          <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                @csrf
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10">
+                            <div class="card card-secondary">
+                                <div class="card-header">
+                                    <h3 class="card-title">
+                                        Data Berkas
+                                    </h3>
+                                </div>
+                                <div class="card-body">
+                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
+                                        @csrf
 
-                                <input type="hidden" name="user" value="user" readonly>
-                                <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                <div class="form-group">
-                                    {{ Form::label('Surat Lamaran') }}
-                                    <input type="text" class="form-control" name="surat_lamaran" id="surat_lamaran" value="{{$data->surat_lamaran}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Curriculum Vitae (CV)') }}
-                                    <input type="text" class="form-control" name="cv" id="cv" value="{{$data->cv}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Pengalaman Kerja') }}
-                                    <input type="text" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja" value="{{$data->pengalaman_kerja}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Portofolio') }}
-                                    <input type="text" class="form-control" name="portofolio" id="portofolio" value="{{$data->portofolio}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('KK') }}
-                                    <input type="text" class="form-control" name="kk" id="kk" value="{{$data->kk}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('KTP') }}
-                                    <input type="text" class="form-control" name="ktp" id="ktp" value="{{$data->ktp}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Ijazah Terakhir') }}
-                                    <input type="text" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir" value="{{$data->ijazah_terakhir}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Transkrip Nilai') }}
-                                    <input type="text" class="form-control" name="transkrip_nilai" id="transkrip_nilai" value="{{$data->transkrip_nilai}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('SKCK') }}
-                                    <input type="text" class="form-control" name="skck" id="skck" value="{{$data->skck}}" readonly>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Foto Terbaru') }}
-                                    <input type="text" class="form-control" name="foto" id="foto" value="{{$data->foto}}" readonly>
-                                </div>
+                                        <input type="hidden" name="user" value="user" readonly>
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
+                                        <div class="form-group">
+                                            {{ Form::label('Surat Lamaran') }}
+                                            <input type="text" class="form-control" name="surat_lamaran" id="surat_lamaran" value="{{$data->surat_lamaran}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Curriculum Vitae (CV)') }}
+                                            <input type="text" class="form-control" name="cv" id="cv" value="{{$data->cv}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Pengalaman Kerja') }}
+                                            <input type="text" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja" value="{{$data->pengalaman_kerja}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Portofolio') }}
+                                            <input type="text" class="form-control" name="portofolio" id="portofolio" value="{{$data->portofolio}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('KK') }}
+                                            <input type="text" class="form-control" name="kk" id="kk" value="{{$data->kk}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('KTP') }}
+                                            <input type="text" class="form-control" name="ktp" id="ktp" value="{{$data->ktp}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Ijazah Terakhir') }}
+                                            <input type="text" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir" value="{{$data->ijazah_terakhir}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Transkrip Nilai') }}
+                                            <input type="text" class="form-control" name="transkrip_nilai" id="transkrip_nilai" value="{{$data->transkrip_nilai}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('SKCK') }}
+                                            <input type="text" class="form-control" name="skck" id="skck" value="{{$data->skck}}" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            {{ Form::label('Foto Terbaru') }}
+                                            <input type="text" class="form-control" name="foto" id="foto" value="{{$data->foto}}" readonly>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-footer text-right">
+                                        <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
+                                    </div>
+                                  </form>
                             </div>
-                            
-                            <div class="card-footer text-right">
-                                <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
-                            </div>
-                          </form>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
                 </div>
                 @endif

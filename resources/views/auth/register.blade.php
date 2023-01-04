@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
 </head>
 
 <body class="hold-transition login-page">
@@ -77,19 +78,20 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">Kode Perusahaan</label>
-                                    <select name="" id="" class="form-control">
+                                    {{-- <select name="" id="perusahaan" class="form-control">
                                         <option value="">0001</option>
-                                    </select>
+                                    </select> --}}
+                                    <input type="text" class="form-control" id="perusahaan">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Nama Jabatan</label>
-                                    <select name="" id="" class="form-control">
+                                    <select name="" id="jabatan" class="form-control">
                                         <option value="">HRD</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-12">
                             <div class="social-auth-links text-center mb-3">
                                 <button type="submit" class="btn btn-block btn-primary">
@@ -109,5 +111,10 @@
     <script src="{{asset('assets/plugins/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/select2/js/select2.min.js')}}"></script>
+    <script>
+        $('#perusahaan').select2();
+        $('#jabatan').select2();
+    </script>
 </body>
 </html>
