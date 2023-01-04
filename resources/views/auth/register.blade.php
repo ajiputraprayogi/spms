@@ -78,16 +78,11 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">Kode Perusahaan</label>
-                                    {{-- <select name="" id="perusahaan" class="form-control">
-                                        <option value="">0001</option>
-                                    </select> --}}
-                                    <input type="text" class="form-control" id="perusahaan">
+                                    <select name="perusahaan" id="perusahaan" class="form-control"></select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Nama Jabatan</label>
-                                    <select name="" id="jabatan" class="form-control">
-                                        <option value="">HRD</option>
-                                    </select>
+                                    <select name="jabatan" id="jabatan" class="form-control"></select>
                                 </div>
                             </div>
                         </div>
@@ -113,8 +108,43 @@
     <script src="{{asset('assets/dist/js/adminlte.min.js')}}"></script>
     <script src="{{asset('assets/plugins/select2/js/select2.min.js')}}"></script>
     <script>
-        $('#perusahaan').select2();
-        $('#jabatan').select2();
+        $(function(){
+            $('#perusahaan').select2({
+                ajax: {
+                    url: '/cari-perusahaan',
+                    dataType: 'json',
+                    delay: 250,
+                    processResults: function(data){
+                        return{
+                            results: $.map(data, function(item){
+                                return{
+                                    id: item.id,
+                                    text: item.kode
+                                }
+                            })
+                        }
+                    },
+                    cache: true
+                }
+            });
+            $('#perusahaan').on('select2:select', function(e){
+                var kode = $(this).val();
+                $.ajax({
+                    type: 'GET',
+                    url: '/cari-perusahaan-hasil/'+kode,
+                    success: function(data){
+                        $.each(data.data, function (key, value) {
+                            var newOption = new Option(value.kode, value.id, false, false);
+                            $('#jabatan').empty().append(newOption).trigger("change");
+                        });
+                    },
+                    complete: function () {
+                        $('#jabatan').val(null).trigger('change');
+                    }
+                })
+            })
+            $('#jabatan').select2();
+        })
     </script>
 </body>
 </html>

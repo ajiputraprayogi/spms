@@ -38,6 +38,8 @@ Route::post('/data-berkas', [UploadBerkasController::class,'store'])->name('data
 //===========================================================================================Test
 Route::resource('/test', TestController::class);
 
+Route::get('/cari-perusahaan', [App\Http\Controllers\Auth\RegisterController::class, 'cariperusahaan']);
+Route::get('/cari-perusahaan-hasil/{id}', [App\Http\Controllers\Auth\RegisterController::class, 'cariperusahaanhasil']);
 
 Route::prefix('backend')->middleware('is_admin')->group(function () {
 

@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use DB;
+
 
 class RegisterController extends Controller
 {
@@ -49,11 +52,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        dd($data);
         return Validator::make($data, [
             // 'username' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'perusahaan' => ['required', 'string'],
+            'jabatan' => ['required', 'string']
         ]);
     }
 
@@ -70,6 +76,36 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+
+            // custom
+            'id_perusahaan' => $data['perusahaan'],
+            'id_jabatan' => $data['jabatan']
         ]);
+    }
+
+    public function cariperusahaan(Request $request)
+    {
+        if($request->has('q')){
+            $cari=$request->q;
+            $data = DB::table('perusahaan')
+            ->select('perusahaan.*')
+            ->where('kode','like','%'.$cari.'%')
+            ->orderby('kode','asc')
+            ->get();
+            return response()->json($data);
+        }
+    }
+    
+    public function cariperusahaanhasil($id)
+    {
+        $data = DB::table('jabatan')
+        ->select('jabatan.*')
+        ->where('jabatan.id_perusahaan',$id)
+        ->get();
+
+        $print=[
+            'data'=>$data,
+        ];
+        return response()->json($print);
     }
 }
