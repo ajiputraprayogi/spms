@@ -25,7 +25,7 @@
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="row">
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-0">
                             <label>Nama</label>
                             <input id="name" type="text" class="mt-0 form-control @error('name') is-invalid @enderror"
                                 name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -46,7 +46,7 @@
                             </span>
                             @enderror
                         </div> -->
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-0">
                             <label>Email</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" required>
@@ -56,7 +56,7 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-0">
                             <label>Password</label>
                             <input id="password" type="password"
                                 class="form-control @error('password') is-invalid @enderror" name="password" required
@@ -67,11 +67,29 @@
                             </span>
                             @enderror
                         </div>
-                        <div class="col-md-12 mb-3">
+                        <div class="col-md-12 mb-0">
                             <label>Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control"
                                 name="password_confirmation" required autocomplete="new-password">
                         </div>
+                        <!-- test -->
+                        <div class="col-md-12 mb-0">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">Kode Perusahaan</label>
+                                    <select name="" id="" class="form-control">
+                                        <option value="">0001</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Nama Jabatan</label>
+                                    <select name="" id="" class="form-control">
+                                        <option value="">HRD</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <div class="col-12">
                             <div class="social-auth-links text-center mb-3">
                                 <button type="submit" class="btn btn-block btn-primary">

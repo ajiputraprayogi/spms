@@ -230,53 +230,59 @@ ul.checkout-bar a {
                   </div>
                 </div>
                 <div class="col-md-12 mt-4">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                Input Data Diri
-                            </h3>
-                        </div>
-                        <div class="card-body">
-                          <form method="POST" action="{{ route('data-diri.storeUser') }}" role="form" enctype="multipart/form-data">
-                                @csrf
-
-                                <input type="hidden" name="user" value="user" readonly>
-                                <div class="form-group">
-                                    <label for="">Akun</label>
-                                    <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
-                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Nama Lengkap</label>
-                                    <input type="text" name="nama_lengkap" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Tempat Lahir</label>
-                                    <input type="text" name="tempat_lahir" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Tgl Lahir</label>
-                                    <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Alamat</label>
-                                    <input type="text" name="alamat" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">No. HP / WA</label>
-                                    <input type="text" name="no_hp" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" required>
-                                </div>
-                            </div>
-                            
-                            <div class="card-footer text-right">
-                                <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
-                            </div>
-                          </form>
+                  <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                      <div class="card card-secondary">
+                          <div class="card-header">
+                              <h3 class="card-title">
+                                  Input Data Diri
+                              </h3>
+                          </div>
+                          <div class="card-body">
+                            <form method="POST" action="{{ route('data-diri.storeUser') }}" role="form" enctype="multipart/form-data">
+                                  @csrf
+  
+                                  <input type="hidden" name="user" value="user" readonly>
+                                  <div class="form-group">
+                                      <!-- <label for="">Akun</label> -->
+                                      <input type="hidden" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
+                                      <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">Nama Lengkap</label>
+                                      <input type="text" name="nama_lengkap" class="form-control" value="{{Auth::user()->name}}" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">Tempat Lahir</label>
+                                      <input type="text" name="tempat_lahir" class="form-control" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">Tgl Lahir</label>
+                                      <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">Alamat</label>
+                                      <input type="text" name="alamat" class="form-control" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">No. HP / WA</label>
+                                      <input type="text" name="no_hp" class="form-control" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="">Email</label>
+                                      <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly required>
+                                  </div>
+                              </div>
+                              
+                              <div class="card-footer text-right">
+                                  <button type="submit" class="btn btn-primary">Simpan & lanjut</button>
+                              </div>
+                            </form>
+                      </div>
                     </div>
+                    <div class="col-md-1"></div>
+                  </div>
                 </div>
                 @endif
                 @if($datadiri > 0 && !$datapendidikan > 0 && !$databerkas > 0)

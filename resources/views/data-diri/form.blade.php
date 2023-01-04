@@ -29,7 +29,7 @@
                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                 </div>
             </div> -->
-            <input class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Tgl Lahir" autocomplete="off">
+            <input class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="Tgl Lahir" value="{{date('d-m-Y')}}" autocomplete="off">
         </div>
         <div class="form-group">
             {{ Form::label('alamat') }}
