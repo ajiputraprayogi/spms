@@ -48,6 +48,7 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         request()->validate(Test::$rules);
 
         $test = Test::create($request->all());

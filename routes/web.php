@@ -45,29 +45,29 @@ Route::prefix('backend')->middleware('is_admin')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'indexAdmin'])->name('home.admin');
     Route::get('/home/edit-profile', [App\Http\Controllers\HomeController::class, 'editprofile']);
     Route::post('/home/edit-profile', [App\Http\Controllers\HomeController::class, 'aksieditprofile']);
-    
+
     //===========================================================================================Users
     Route::get('/list-data-users',[UserController::class,'listdata']);
     Route::resource('users', UserController::class);
-    
+
     //===========================================================================================Roles
     Route::get('/list-data-roles',[RolesController::class,'listdata']);
     Route::resource('roles', RolesController::class);
-    
+
     //===========================================================================================Permission
     Route::get('/list-data-permission',[PermissionController::class,'listdata']);
     Route::resource('permission', PermissionController::class);
-    
+
     //===========================================================================================Setting-Web
     Route::get('/setting-web',[SettingWebController::class,'index']);
     Route::post('/setting-web',[SettingWebController::class,'store']);
-    
+
     //===========================================================================================perusahaan
     Route::resource('/perusahaan', PerusahaanController::class);
-    
+
     //===========================================================================================jabatan
     Route::resource('/jabatan', JabatanController::class);
-    
+
     //===========================================================================================soal
     Route::resource('/soal', SoalController::class);
 

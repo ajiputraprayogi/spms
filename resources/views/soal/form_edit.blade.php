@@ -1,6 +1,6 @@
 <div id="divsatu" class="box box-info padding-1">
     <div class="box-body">
-        
+
         <!-- <div class="form-group">
             {{ Form::label('jenis_soal') }}
             {{ Form::text('jenis_soal', $soal->jenis_soal, ['class' => 'form-control' . ($errors->has('jenis_soal') ? ' is-invalid' : ''), 'placeholder' => 'Jenis Soal']) }}
@@ -35,9 +35,9 @@
         <button id="buttonsatu" type="button" onclick="next()" class="btn btn-primary">Next</button>
     </div>
 </div>
-<div id="divdua" style="display:show;" class="box box-info padding-1">
+<div id="divdua" style="display:none;" class="box box-info padding-1">
     <div id="divbody" class="box-body">
-        
+
         @php
             $soaljenis = DB::table('soal')->where('jenis_soal', $soal->jenis_soal)->get();
             $jumlahsoalabc = $soal->jumlah_soal_abc;
@@ -98,7 +98,7 @@
         @endif
         @endforeach
 
-        
+
         @foreach($soaljenis as $rowsoaljenis)
         @if($rowsoaljenis->tipe_soal == 'YaTidak')
         <div class="card card-warning">
