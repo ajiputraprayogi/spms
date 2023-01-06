@@ -35,7 +35,7 @@ class DataDiri extends Model
      *
      * @var array
      */
-    protected $fillable = ['fk','user_id','nama_lengkap','tempat_lahir','tgl_lahir','alamat','no_hp','email'];
+    protected $fillable = ['fk','user_id','nama_lengkap','tempat_lahir','tgl_lahir','alamat','no_hp','email','nikah','anak_ke','jumlah_saudara','tinggi','berat_badan','riwayat_penyakit'];
 
 
 

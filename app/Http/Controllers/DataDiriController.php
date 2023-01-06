@@ -75,7 +75,7 @@ class DataDiriController extends Controller
                 'no_hp' => $request->no_hp,
                 'email' => $request->email
             ]);
-    
+            
             $dataPendidikan = DataPendidikan::create([
                 'fk' => $request->fk,
                 'user_id' => $request->user_id,
@@ -229,7 +229,13 @@ class DataDiriController extends Controller
                 'tgl_lahir' => $request->tgl_lahir,
                 'alamat' => $request->alamat,
                 'no_hp' => $request->no_hp,
-                'email' => $request->email
+                'email' => $request->email,
+                'nikah' => $request->nikah,
+                'anak_ke' => $request->anak_ke,
+                'jumlah_saudara' => $request->jumlah_saudara,
+                'tinggi' => $request->tinggi,
+                'berat_badan' => $request->berat_badan,
+                'riwayat_penyakit' => $request->riwayat_penyakit
             ]);
 
             return redirect()->route('home');

@@ -122,27 +122,27 @@ class UploadBerkasController extends Controller
                 $kk = '';
             }
     
-            if(!$_FILES["ijazah_terakhir"]["error"] == 4) {
-                $nameland7=$request->file('ijazah_terakhir')->getClientOriginalname();
-                $lower_file_name7=strtolower($nameland7);
-                $replace_space7=str_replace(' ', '-', $lower_file_name7);
-                $ijazah_terakhir=time().'-'.$replace_space7;
-                $destination7=public_path('img/ijazah_terakhir');
-                $request->file('ijazah_terakhir')->move($destination7,$ijazah_terakhir);
-            }else{
-                $ijazah_terakhir = '';
-            }
+            // if(!$_FILES["ijazah_terakhir"]["error"] == 4) {
+            //     $nameland7=$request->file('ijazah_terakhir')->getClientOriginalname();
+            //     $lower_file_name7=strtolower($nameland7);
+            //     $replace_space7=str_replace(' ', '-', $lower_file_name7);
+            //     $ijazah_terakhir=time().'-'.$replace_space7;
+            //     $destination7=public_path('img/ijazah_terakhir');
+            //     $request->file('ijazah_terakhir')->move($destination7,$ijazah_terakhir);
+            // }else{
+            //     $ijazah_terakhir = '';
+            // }
     
-            if(!$_FILES["transkrip_nilai"]["error"] == 4) {
-                $nameland8=$request->file('transkrip_nilai')->getClientOriginalname();
-                $lower_file_name8=strtolower($nameland8);
-                $replace_space8=str_replace(' ', '-', $lower_file_name8);
-                $transkrip_nilai=time().'-'.$replace_space8;
-                $destination8=public_path('img/transkrip_nilai');
-                $request->file('transkrip_nilai')->move($destination8,$transkrip_nilai);
-            }else{
-                $transkrip_nilai = '';
-            }
+            // if(!$_FILES["transkrip_nilai"]["error"] == 4) {
+            //     $nameland8=$request->file('transkrip_nilai')->getClientOriginalname();
+            //     $lower_file_name8=strtolower($nameland8);
+            //     $replace_space8=str_replace(' ', '-', $lower_file_name8);
+            //     $transkrip_nilai=time().'-'.$replace_space8;
+            //     $destination8=public_path('img/transkrip_nilai');
+            //     $request->file('transkrip_nilai')->move($destination8,$transkrip_nilai);
+            // }else{
+            //     $transkrip_nilai = '';
+            // }
     
             if(!$_FILES["skck"]["error"] == 4) {
                 $nameland9=$request->file('skck')->getClientOriginalname();
@@ -176,8 +176,8 @@ class UploadBerkasController extends Controller
                 'portofolio' => $portofolio,
                 'ktp' => $ktp,
                 'kk' => $kk,
-                'ijazah_terakhir' => $ijazah_terakhir,
-                'transkrip_nilai' => $transkrip_nilai,
+                // 'ijazah_terakhir' => $ijazah_terakhir,
+                // 'transkrip_nilai' => $transkrip_nilai,
                 'skck' => $skck,
                 'foto' => $foto
             ]);

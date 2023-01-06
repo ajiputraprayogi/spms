@@ -318,7 +318,7 @@ ul.checkout-bar a {
                                         <div class="col-md-6">
                                             <label for="">Berat Badan</label>
                                             <div class="input-group mb-3">
-                                                <input type="text" class="form-control" name="tinggi" required>
+                                                <input type="text" class="form-control" name="berat_badan" required>
                                                 <div class="input-group-append">
                                                     <span class="input-group-text">KG</span>
                                                 </div>
@@ -387,19 +387,19 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SD</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sd" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sd_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sd_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="sd_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -411,19 +411,19 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SMP</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="smp" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="smp_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="smp_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="smp_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -435,23 +435,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SMA</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sma" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sma_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sma_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sma_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="sma_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -463,23 +463,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D1</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dsatu" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dsatu_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dsatu_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dsatu_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="dsatu_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -491,23 +491,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D2</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ddua" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ddua_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ddua_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ddua_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="ddua_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -519,23 +519,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D3</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dtiga" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dtiga_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dtiga_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="dtiga_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="dtiga_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -547,23 +547,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S1</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ssatu" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ssatu_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ssatu_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="ssatu_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="ssatu_jurusan" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -575,23 +575,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S2</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sdua" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sdua_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sdua_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="sdua_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="sdua_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -603,23 +603,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S3</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="stiga" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="stiga_jurusan" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="stiga_tahun_lulus" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" class="form-control">
+                                                  <input type="text" name="stiga_nilai_akhir" class="form-control">
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" class="form-control">
+                                                  <input type="file" name="stiga_berkas" class="form-control">
                                                 </div>
                                               </div>
                                             </div>
@@ -653,26 +653,66 @@ ul.checkout-bar a {
                                             </div>
                                         </div>
                                         <div class="card">
+                                          <div class="card-body">
+                                              <label for="">Bahasa Asing</label>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris">
+                                                  <label class="form-check-label" for="Inggris">
+                                                      Inggris
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin">
+                                                  <label class="form-check-label" for="Mandarin">
+                                                      Mandarin
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea">
+                                                  <label class="form-check-label" for="Korea">
+                                                      Korea
+                                                  </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
                                             <div class="card-body">
-                                                <label for="">Bahasa Asing</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="Inggris">
-                                                    <label class="form-check-label" for="Inggris">
-                                                        Inggris
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="Mandarin">
-                                                    <label class="form-check-label" for="Mandarin">
-                                                        Mandarin
-                                                    </label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" value="" id="Korea">
-                                                    <label class="form-check-label" for="Korea">
-                                                        Korea
-                                                    </label>
-                                                </div>
+                                                <label for="">Pengalaman Kerja</label>
+                                                <table class="table table-bordered" id="tabelpengalamankerja">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>Nama Perusahaan</th>
+                                                        <th>Jabatan</th>
+                                                        <th>Lama Bekerja</th>
+                                                        <th>Tahun</th>
+                                                        <th>Berkas</th>
+                                                        <th>#</th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="nama_perusahaan[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="jabatan[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="lama_bekerja[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="tahun[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" class="form-control" name="pengalaman_berkas[]">
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <button class="btn btn-sm float-right btn-info" id="add_tr2"
+                                                                type="button"><i class="fa fa-plus"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -745,14 +785,6 @@ ul.checkout-bar a {
                                     <input type="file" class="form-control" name="ktp" id="ktp" required>
                                 </div>
                                 <div class="form-group">
-                                    {{ Form::label('Ijazah Terakhir') }}
-                                    <input type="file" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir" required>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('Transkrip Nilai') }}
-                                    <input type="file" class="form-control" name="transkrip_nilai" id="transkrip_nilai" required>
-                                </div>
-                                <div class="form-group">
                                     {{ Form::label('SKCK') }}
                                     <input type="file" class="form-control" name="skck" id="skck" required>
                                 </div>
@@ -818,45 +850,104 @@ ul.checkout-bar a {
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                        @csrf
+                                  <form method="POST" role="form" enctype="multipart/form-data">
+                                    @csrf
 
-                                        <input type="hidden" name="user" value="user" readonly>
-                                        <div class="form-group">
-                                            <label for="">Akun</label>
-                                            <input type="text" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly>
-                                            <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="">Nama Lengkap</label>
-                                            <input type="text" name="nama_lengkap" class="form-control" value="{{$data->nama_lengkap}}" readonly>
-                                        </div>
+                                    <input type="hidden" name="user" value="user" readonly>
+                                    <div class="form-group">
+                                        <!-- <label for="">Akun</label> -->
+                                        <input type="hidden" class="form-control" name="akun" value="{{Auth::user()->name}}" readonly required>
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Nama Lengkap</label>
+                                        <input type="text" name="nama_lengkap" class="form-control" value="{{$data->nama_lengkap}}" readonly required>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Tempat Lahir</label>
-                                            <input type="text" name="tempat_lahir" class="form-control" value="{{$data->tempat_lahir}}" readonly>
+                                            <input type="text" name="tempat_lahir" class="form-control" value="{{$data->tempat_lahir}}" readonly required>
                                         </div>
+                                      </div>
+                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Tgl Lahir</label>
-                                            <input type="text" id="" name="tgl_lahir" class="form-control" value="{{$data->tgl_lahir}}" readonly>
+                                            <input type="text" id="" name="tgl_lahir" class="form-control" autocomplete="off" value="{{$data->tgl_lahir}}" readonly required>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="">Alamat</label>
-                                            <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}" readonly>
-                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Alamat</label>
+                                        <input type="text" name="alamat" class="form-control" value="{{$data->alamat}}" readonly required>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">No. HP / WA</label>
-                                            <input type="text" name="no_hp" class="form-control" value="{{$data->no_hp}}" readonly>
+                                            <input type="text" name="no_hp" class="form-control" value="{{$data->no_hp}}" readonly required>
                                         </div>
+                                      </div>
+                                      <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="">Email</label>
-                                            <input type="email" name="email" class="form-control" value="{{$data->email}}" readonly>
+                                            <input type="email" name="email" class="form-control" value="{{$data->email}}" readonly required>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="">Nikah</label>
+                                        <select name="nikah" id="nikah" class="form-control" readonly>
+                                            <option @if($data->nikah == 'Nikah') selected @endif>Nikah</option>
+                                            <option @if($data->nikah == 'Belum') selected @endif>Belum</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Anak ke</label>
+                                                <input type="text" name="anak_ke" class="form-control" value="{{$data->anak_ke}}" readonly required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Jumlah Saudara</label>
+                                                <input type="text" name="jumlah_saudara" class="form-control" value="{{$data->jumlah_saudara}}" readonly required>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div class="card-footer text-right">
-                                        <button type="button" onclick="lanjut_datadiri()" class="btn btn-primary">Lanjut</button>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Tinggi</label>
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" name="tinggi" value="{{$data->tinggi}}" readonly required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">CM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Berat Badan</label>
+                                                <div class="input-group mb-3">
+                                                    <input type="text" class="form-control" name="berat_badan" value="{{$data->berat_badan}}" readonly required>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">KG</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                  </form>
+                                    <div class="form-group">
+                                        <label for="">Riwayat Penyakit</label>
+                                        <select name="riwayat_penyakit" id="riwayat_penyakit" class="form-control" readonly>
+                                            <option @if($data->riwayat_penyakit == 'Tidak Menular') selected @endif>Tidak Menular</option>
+                                            <option @if($data->riwayat_penyakit == 'Menular') selected @endif>Menular</option>
+                                        </select>
+                                    </div>
+                                  </div>
+                                  <div class="card-footer text-right">
+                                    <button type="button" onclick="lanjut_datadiri()" class="btn btn-primary">Lanjut</button>
+                                  </div>
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
@@ -873,32 +964,351 @@ ul.checkout-bar a {
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
+                                <form method="POST" action="" role="form" enctype="multipart/form-data">
                                         @csrf
 
-                                        <input type="hidden" name="user" value="user" readonly>
-                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                        <div class="form-group">
-                                            {{ Form::label('Pendidikan Terakhir') }}
-                                            <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" value="{{$data->pendidikan_terakhir}}" readonly>
+                                        <input type="hidden" name="user" value="user" readonly required>
+                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SD</label>
+                                                  <input type="text" name="sd" value="{{$data->sd}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="sd_tahun_lulus" value="{{$data->sd_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="sd_nilai_akhir" value="{{$data->sd_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="sd_berkas" value="{{$data->sd_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Asal Sekolah / Universitas') }}
-                                            <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" value="{{$data->asal_sekolah}}" readonly>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SMP</label>
+                                                  <input type="text" name="smp" value="{{$data->smp}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="smp_tahun_lulus" value="{{$data->smp_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="smp_nilai_akhir" value="{{$data->smp_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="smp_berkas" value="{{$data->smp_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Jurusan / Program Studi') }}
-                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" value="{{$data->jurusan}}" readonly>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SMA</label>
+                                                  <input type="text" name="sma" value="{{$data->sma}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="sma_jurusan" value="{{$data->sma_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="sma_tahun_lulus" value="{{$data->sma_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="sma_nilai_akhir" value="{{$data->sma_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="sma_berkas" value="{{$data->sma_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Nilai Akhir / IPK') }}
-                                            <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" value="{{$data->nilai_akhir}}" readonly>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D1</label>
+                                                  <input type="text" name="dsatu" value="{{$data->dsatu}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="dsatu_jurusan" value="{{$data->dsatu_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="dsatu_tahun_lulus" value="{{$data->dsatu_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="dsatu_nilai_akhir" value="{{$data->dsatu_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="dsatu_berkas" value="{{$data->dsatu_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D2</label>
+                                                  <input type="text" name="ddua" value="{{$data->ddua}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="ddua_jurusan" value="{{$data->ddua_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="ddua_tahun_lulus" value="{{$data->ddua_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="ddua_nilai_akhir" value="{{$data->ddua_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="ddua_berkas" value="{{$data->ddua_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D3</label>
+                                                  <input type="text" name="dtiga" value="{{$data->dtiga}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="dtiga_jurusan" value="{{$data->dtiga_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="dtiga_tahun_lulus" value="{{$data->dtiga_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="dtiga_nilai_akhir" value="{{$data->dtiga_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="dtiga_berkas" value="{{$data->dtiga_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S1</label>
+                                                  <input type="text" name="ssatu" value="{{$data->ssatu}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="ssatu_jurusan" value="{{$data->ssatu_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="ssatu_tahun_lulus" value="{{$data->ssatu_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="ssatu_nilai_akhir" value="{{$data->ssatu_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="ssatu_berkas" value="{{$data->ssatu_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S2</label>
+                                                  <input type="text" name="sdua" value="{{$data->sdua}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="sdua_jurusan" value="{{$data->sdua_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="sdua_tahun_lulus" value="{{$data->sdua_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="sdua_nilai_akhir" value="{{$data->sdua_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="sdua_berkas" value="{{$data->sdua_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S3</label>
+                                                  <input type="text" name="stiga" value="{{$data->stiga}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" name="stiga_jurusan" value="{{$data->stiga_jurusan}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" name="stiga_tahun_lulus" value="{{$data->stiga_tahun_lulus}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" name="stiga_nilai_akhir" value="{{$data->stiga_nilai_akhir}}" class="form-control" readonly>
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="text" name="stiga_berkas" value="{{$data->stiga_berkas}}" class="form-control" readonly>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="">Nonakademik</label>
+                                                <table class="table table-bordered" id="tabelnonakademik">
+                                                  @php
+                                                    $nonakademik = DB::table('nonakademik')->where('user_id', $data->user_id)->get();
+                                                  @endphp
+                                                  @foreach($nonakademik as $rownonakademik)
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rownonakademik->nonakademik_satu}}" name="nonakademik_satu[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rownonakademik->nonakademik_dua }}" name="nonakademik_dua[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rownonakademik->nonakademik_tiga}}" name="nonakademik_tiga[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rownonakademik->nonakademik_berkas}}" name="nonakademik_berkas[]" readonly>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                  @endforeach
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                              <label for="">Bahasa Asing</label>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris" @if($data->bahasa_asing == 'Inggris') checked @endif readonly>
+                                                  <label class="form-check-label" for="Inggris">
+                                                      Inggris
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin" @if($data->bahasa_asing == 'Mandarin') checked @endif readonly>
+                                                  <label class="form-check-label" for="Mandarin">
+                                                      Mandarin
+                                                  </label>
+                                              </div>
+                                              <div class="form-check">
+                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea" @if($data->bahasa_asing == 'Korea') checked @endif readonly>
+                                                  <label class="form-check-label" for="Korea">
+                                                      Korea
+                                                  </label>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="">Pengalaman Kerja</label>
+                                                <table class="table table-bordered" id="tabelpengalamankerja">
+                                                    <thead>
+                                                      <tr>
+                                                        <th>Nama Perusahaan</th>
+                                                        <th>Jabatan</th>
+                                                        <th>Lama Bekerja</th>
+                                                        <th>Tahun</th>
+                                                        <th>Berkas</th>
+                                                      </tr>
+                                                    </thead>
+                                                    @php
+                                                      $pengalamankerja = DB::table('pengalaman_kerja')->where('user_id', $data->user_id)->get();
+                                                    @endphp
+                                                    @foreach($pengalamankerja as $rowpengalamankerja)
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rowpengalamankerja->nama_perusahaan}}" name="nama_perusahaan[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rowpengalamankerja->jabatan}}" name="jabatan[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rowpengalamankerja->lama_bekerja}}" name="lama_bekerja[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rowpengalamankerja->tahun}}" name="tahun[]" readonly>
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" value="{{$rowpengalamankerja->pengalaman_berkas}}" name="pengalaman_berkas[]" readonly>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                    @endforeach
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="card-footer text-right">
-                                        <button type="button" onclick="kembali_datapendidikan()" class="btn btn-danger float-left">Kembali</button>
-                                        <button type="button" onclick="lanjut_datapendidikan()" class="btn btn-primary">Lanjut</button>
+                                      <button type="button" onclick="kembali_datapendidikan()" class="btn btn-danger float-left">Kembali</button>
+                                      <button type="button" onclick="lanjut_datapendidikan()" class="btn btn-primary">Lanjut</button>
                                     </div>
                                   </form>
                             </div>
@@ -917,57 +1327,49 @@ ul.checkout-bar a {
                                     </h3>
                                 </div>
                                 <div class="card-body">
-                                  <form method="POST" action="" role="form" enctype="multipart/form-data">
-                                        @csrf
+                                  <form method="POST" action="{{ route('data-berkas.storeUser') }}" role="form" enctype="multipart/form-data">
+                                  @csrf
 
-                                        <input type="hidden" name="user" value="user" readonly>
-                                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly>
-                                        <div class="form-group">
-                                            {{ Form::label('Surat Lamaran') }}
-                                            <input type="text" class="form-control" name="surat_lamaran" id="surat_lamaran" value="{{$data->surat_lamaran}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Curriculum Vitae (CV)') }}
-                                            <input type="text" class="form-control" name="cv" id="cv" value="{{$data->cv}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Pengalaman Kerja') }}
-                                            <input type="text" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja" value="{{$data->pengalaman_kerja}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Portofolio') }}
-                                            <input type="text" class="form-control" name="portofolio" id="portofolio" value="{{$data->portofolio}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('KK') }}
-                                            <input type="text" class="form-control" name="kk" id="kk" value="{{$data->kk}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('KTP') }}
-                                            <input type="text" class="form-control" name="ktp" id="ktp" value="{{$data->ktp}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Ijazah Terakhir') }}
-                                            <input type="text" class="form-control" name="ijazah_terakhir" id="ijazah_terakhir" value="{{$data->ijazah_terakhir}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Transkrip Nilai') }}
-                                            <input type="text" class="form-control" name="transkrip_nilai" id="transkrip_nilai" value="{{$data->transkrip_nilai}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('SKCK') }}
-                                            <input type="text" class="form-control" name="skck" id="skck" value="{{$data->skck}}" readonly>
-                                        </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Foto Terbaru') }}
-                                            <input type="text" class="form-control" name="foto" id="foto" value="{{$data->foto}}" readonly>
-                                        </div>
-                                    </div>
+                                  <input type="hidden" name="user" value="user" readonly required>
+                                  <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
+                                  <div class="form-group">
+                                      {{ Form::label('Surat Lamaran') }}
+                                      <input type="text" class="form-control" name="surat_lamaran" id="surat_lamaran" value="{{$data->surat_lamaran}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('Curriculum Vitae (CV)') }}
+                                      <input type="text" class="form-control" name="cv" id="cv" value="{{$data->cv}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('Pengalaman Kerja') }}
+                                      <input type="text" class="form-control" name="pengalaman_kerja" id="pengalaman_kerja" value="{{$data->pengalaman_kerja}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('Portofolio') }}
+                                      <input type="text" class="form-control" name="portofolio" id="portofolio" value="{{$data->portofolio}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('KK') }}
+                                      <input type="text" class="form-control" name="kk" id="kk" value="{{$data->kk}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('KTP') }}
+                                      <input type="text" class="form-control" name="ktp" id="ktp" value="{{$data->ktp}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('SKCK') }}
+                                      <input type="text" class="form-control" name="skck" id="skck" value="{{$data->skck}}" readonly required>
+                                  </div>
+                                  <div class="form-group">
+                                      {{ Form::label('Foto Terbaru') }}
+                                      <input type="text" class="form-control" name="foto" id="foto" value="{{$data->foto}}" readonly required>
+                                  </div>
+                              </div>
 
-                                    <div class="card-footer text-right">
-                                        <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
-                                    </div>
-                                  </form>
+                              <div class="card-footer text-right">
+                                <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
+                              </div>
+                            </form>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
@@ -1033,6 +1435,34 @@ ul.checkout-bar a {
         });
         function deletetr(id) {
             document.getElementById("tr_" + id).remove();
+        }
+
+        $('#add_tr2').on('click', function (e) {
+            var newRowContent =
+                `<tr id="tr2_` + ($("#tabelpengalamankerja > tbody > tr").length + 1) + `">` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="nama_perusahaan[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="jabatan[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="lama_bekerja[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="tahun[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="file" class="form-control" name="pengalaman_berkas[]">` +
+                `</td>` +
+                `<td class="text-center">` +
+                `<button class="btn btn-sm btn-danger" onclick="deletetr2(` + ($("#tabelpengalamankerja > tbody > tr").length + 1) + `)" type="button"><i class="fa fa-minus"></i></button>` +
+                `</td>` +
+                `</tr>`;
+            $("#tabelpengalamankerja tbody").append(newRowContent);
+        });
+        function deletetr2(id) {
+            document.getElementById("tr2_" + id).remove();
         }
     </script>
 @endpush
