@@ -253,25 +253,37 @@ ul.checkout-bar a {
                                     <label for="">Nama Lengkap</label>
                                     <input type="text" name="nama_lengkap" class="form-control" value="{{Auth::user()->name}}" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Tempat Lahir</label>
-                                    <input type="text" name="tempat_lahir" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Tgl Lahir</label>
-                                    <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" required>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Tempat Lahir</label>
+                                        <input type="text" name="tempat_lahir" class="form-control" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Tgl Lahir</label>
+                                        <input type="text" id="tgl_lahir" name="tgl_lahir" class="form-control" autocomplete="off" required>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Alamat</label>
                                     <input type="text" name="alamat" class="form-control" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="">No. HP / WA</label>
-                                    <input type="text" name="no_hp" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Email</label>
-                                    <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly required>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">No. HP / WA</label>
+                                        <input type="text" name="no_hp" class="form-control" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Email</label>
+                                        <input type="email" name="email" class="form-control" value="{{Auth::user()->email}}" readonly required>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nikah</label>
@@ -369,21 +381,249 @@ ul.checkout-bar a {
 
                                         <input type="hidden" name="user" value="user" readonly required>
                                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
-                                        <div class="form-group">
-                                            {{ Form::label('Pendidikan Terakhir') }}
-                                            <input type="text" class="form-control" name="pendidikan_terakhir" id="pendidikan_terakhir" placeholder="Pendidikan Terakhir" required>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SD</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Asal Sekolah / Universitas') }}
-                                            <input type="text" class="form-control" name="asal_sekolah" id="asal_sekolah" placeholder="Asal Sekolah" required>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SMP</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Jurusan / Program Studi') }}
-                                            <input type="text" class="form-control" name="jurusan" id="jurusan" placeholder="Jurusan" required>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">SMA</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
-                                        <div class="form-group">
-                                            {{ Form::label('Nilai Akhir / IPK') }}
-                                            <input type="text" class="form-control" name="nilai_akhir" id="nilai_akhir" placeholder="Nilai Akhir" required>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D1</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D2</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">D3</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S1</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S2</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="card">
+                                          <div class="card-body">
+                                            <div class="form-group">
+                                              <div class="row">
+                                                <div class="col-md-3">
+                                                  <label for="">S3</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Jurusan</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Tahun Lulus</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Nilai Akhir</label>
+                                                  <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-3">
+                                                  <label for="">Berkas</label>
+                                                  <input type="file" class="form-control">
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
                                         </div>
                                     </div>
 

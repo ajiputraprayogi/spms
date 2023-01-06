@@ -134,7 +134,7 @@
                     url: '/cari-perusahaan-hasil/'+kode,
                     success: function(data){
                         $.each(data.data, function (key, value) {
-                            var newOption = new Option(value.kode, value.id, false, false);
+                            var newOption = new Option(value.nama, value.id, false, false);
                             $('#jabatan').empty().append(newOption).trigger("change");
                         });
                     },
