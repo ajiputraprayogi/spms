@@ -52,7 +52,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        dd($data);
         return Validator::make($data, [
             // 'username' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
@@ -95,7 +94,7 @@ class RegisterController extends Controller
             return response()->json($data);
         }
     }
-    
+
     public function cariperusahaanhasil($id)
     {
         $data = DB::table('jabatan')

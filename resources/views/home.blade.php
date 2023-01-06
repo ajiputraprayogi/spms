@@ -625,6 +625,56 @@ ul.checkout-bar a {
                                             </div>
                                           </div>
                                         </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="">Nonakademik</label>
+                                                <table class="table table-bordered" id="tabelnonakademik">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="nonakademik_satu[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="nonakademik_dua[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="text" class="form-control" name="nonakademik_tiga[]">
+                                                            </td>
+                                                            <td>
+                                                                <input type="file" class="form-control" name="nonakademik_berkas[]">
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <button class="btn btn-sm float-right btn-info" id="add_tr"
+                                                                type="button"><i class="fa fa-plus"></i></button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <label for="">Bahasa Asing</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="Inggris">
+                                                    <label class="form-check-label" for="Inggris">
+                                                        Inggris
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="Mandarin">
+                                                    <label class="form-check-label" for="Mandarin">
+                                                        Mandarin
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="" id="Korea">
+                                                    <label class="form-check-label" for="Korea">
+                                                        Korea
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="card-footer text-right">
@@ -958,5 +1008,31 @@ ul.checkout-bar a {
         $('#data_berkas').hide();
         $('#data_pendidikan').show();
       }
+    </script>
+    <script>
+        $('#add_tr').on('click', function (e) {
+            var newRowContent =
+                `<tr id="tr_` + ($("#tabelnonakademik > tbody > tr").length + 1) + `">` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="nonakademik_satu[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="nonakademik_dua[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="text" class="form-control" name="nonakademik_tiga[]">` +
+                `</td>` +
+                `<td>` +
+                    `<input type="file" class="form-control" name="nonakademik_berkas[]">` +
+                `</td>` +
+                `<td class="text-center">` +
+                `<button class="btn btn-sm btn-danger" onclick="deletetr(` + ($("#tabelnonakademik > tbody > tr").length + 1) + `)" type="button"><i class="fa fa-minus"></i></button>` +
+                `</td>` +
+                `</tr>`;
+            $("#tabelnonakademik tbody").append(newRowContent);
+        });
+        function deletetr(id) {
+            document.getElementById("tr_" + id).remove();
+        }
     </script>
 @endpush
