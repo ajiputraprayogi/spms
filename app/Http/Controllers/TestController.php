@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Test;
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 
 /**
  * Class TestController
@@ -48,13 +49,39 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $idsoal = $request->id_soal;
+        $jawaban = $request->jawaban;
+        $soal = DB::table('soal')->whereIn('id', $idsoal)->get();
+        $benar = [];
+        $salah = [];
+        foreach($soal as $rowsoal){
+            if($jawaban[$rowsoal->id] == $rowsoal->jawaban){
+                array_push($benar, $rowsoal->jawaban);
+            }else{
+                array_push($salah, $rowsoal->jawaban);
+            }
+            $minimal_score = (int)$rowsoal->minimal_score;
+        }
+        $jumlahbenar = count($benar);
+        $jumlahsalah = count($salah);
+        $totalsoal = count($idsoal);
+        $hitung = 100/$totalsoal;
+        $nilai = $hitung*$jumlahbenar;
+        
+        if($nilai >= $minimal_score){
+            $status = 'Lolos';
+        }else{
+            $status = 'Gagal';
+        }
+
         request()->validate(Test::$rules);
 
-        $test = Test::create($request->all());
+        $jenis = DB::table('soal')->where('id', $idsoal)->first();
+        $test = Test::where([['id_user', Auth::user()->id],['jenis_soal', $jenis->jenis_soal]])->update([
+            'status' => $status
+        ]);
 
-        return redirect()->route('test.index')
-            ->with('success', 'Test created successfully.');
+        return redirect()->route('test.index');
     }
 
     /**

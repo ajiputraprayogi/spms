@@ -39,96 +39,127 @@
                             <form method="POST" action="{{ route('test.store') }}"  role="form" enctype="multipart/form-data">
                                 @csrf
 
-                                <div class="box box-info padding-1">
-                                    <div class="box-body">
-                                        @foreach($tests as $rowtests)
-                                            @php
-                                                $soaljenis = DB::table('soal')->where('jenis_soal', $rowtests->jenis_soal)->get();
-                                                foreach($soaljenis as $rowsoaljenis){
-                                                    $jumlahsoalabc = $rowsoaljenis->jumlah_soal_abc;
-                                                }
-                                            @endphp
-                                            <?php $no = 1; ?>
-                                            @foreach($soaljenis as $rowsoaljenis)
-                                            @if($rowsoaljenis->tipe_soal == 'Abc')
-                                            <div class="card card-primary">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <input type="hidden" name="id_soal[{{$rowsoaljenis->id}}]" value="{{$rowsoaljenis->id}}">
-                                                        <input type="hidden" name="tipe_soal[{{$rowsoaljenis->id}}]" id="tipe_soal" value="Abc" class="form-control">
-                                                        <div class="col-md-12">
-                                                            <p name="soal[{{$rowsoaljenis->id}}]" id="soal">{{$no++}}. {{$rowsoaljenis->soal}}</p>
-                                                        </div><br>
-                                                        <div class="col-md-6">
-                                                            <p name="a[{{$rowsoaljenis->id}}]" id="a">A. {{$rowsoaljenis->a}}</p>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p name="b[{{$rowsoaljenis->id}}]" id="b">B. {{$rowsoaljenis->b}}</p>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p name="c[{{$rowsoaljenis->id}}]" id="c">C. {{$rowsoaljenis->c}}</p>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <p name="d[{{$rowsoaljenis->id}}]" id="d">D. {{$rowsoaljenis->d}}</p>
-                                                        </div>
-                                                        <div class="col-md-12"><br>
-                                                            <p style="margin-bottom:2px;">Jawab :</p>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="a[{{$rowsoaljenis->id}}]" value="A">
-                                                            <label for="a[{{$rowsoaljenis->id}}]">A</label>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="b[{{$rowsoaljenis->id}}]" value="B">
-                                                            <label for="b[{{$rowsoaljenis->id}}]">B</label>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="c[{{$rowsoaljenis->id}}]" value="C">
-                                                            <label for="c[{{$rowsoaljenis->id}}]">C</label>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="d[{{$rowsoaljenis->id}}]" value="D">
-                                                            <label for="d[{{$rowsoaljenis->id}}]">D</label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endif
-                                            @endforeach
-
-
-                                            @foreach($soaljenis as $rowsoaljenis)
-                                            @if($rowsoaljenis->tipe_soal == 'YaTidak')
-                                            <div class="card card-warning">
-                                                <div class="card-body">
-                                                    <div class="row">
-                                                        <input type="hidden" name="id_soal[{{$rowsoaljenis->id}}]" value="{{$rowsoaljenis->id}}">
-                                                        <input type="hidden" name="tipe_soal[{{$rowsoaljenis->id}}]" id="tipe_soal" value="YaTidak" class="form-control">
-                                                        <div class="col-md-12">
-                                                            <p name="soal[{{$rowsoaljenis->id}}]" id="soal[{{$rowsoaljenis->id}}]">{{$no++}}. {{$rowsoaljenis->soal}}</p>
-                                                        </div><br>
-                                                        <div class="col-md-12"><br>
-                                                            <p style="margin-bottom:2px;">Jawab :</p>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="ya[{{$rowsoaljenis->id}}]" value="Ya">
-                                                            <label for="ya[{{$rowsoaljenis->id}}]">Ya</label>
-                                                        </div>
-                                                        <div class="col-md-1">
-                                                            <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="tidak[{{$rowsoaljenis->id}}]" value="Tidak">
-                                                            <label for="tidak[{{$rowsoaljenis->id}}]">Tidak</label>
+                                @php
+                                    $ceksoal = DB::table('test')->where([['id_user', Auth::user()->id],['status','Belum']])->first();
+                                @endphp
+                                @if(!empty($ceksoal))
+                                    <div class="box box-info padding-1">
+                                        <div class="box-body">
+                                            @foreach($tests as $rowtests)
+                                                @php
+                                                    $soaljenis = DB::table('soal')->where('jenis_soal', $rowtests->jenis_soal)->get();
+                                                    foreach($soaljenis as $rowsoaljenis){
+                                                        $jumlahsoalabc = $rowsoaljenis->jumlah_soal_abc;
+                                                    }
+                                                @endphp
+                                                <?php $no = 1; ?>
+                                                
+                                                @foreach($soaljenis as $rowsoaljenis)
+                                                @if($rowsoaljenis->tipe_soal == 'Abc')
+                                                <div class="card card-primary">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <input type="hidden" name="id_soal[{{$rowsoaljenis->id}}]" value="{{$rowsoaljenis->id}}">
+                                                            <input type="hidden" name="tipe_soal[{{$rowsoaljenis->id}}]" id="tipe_soal" value="Abc" class="form-control">
+                                                            <div class="col-md-12">
+                                                                <p name="soal[{{$rowsoaljenis->id}}]" id="soal">{{$no++}}. {{$rowsoaljenis->soal}}</p>
+                                                            </div><br>
+                                                            <div class="col-md-6">
+                                                                <p name="a[{{$rowsoaljenis->id}}]" id="a">A. {{$rowsoaljenis->a}}</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p name="b[{{$rowsoaljenis->id}}]" id="b">B. {{$rowsoaljenis->b}}</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p name="c[{{$rowsoaljenis->id}}]" id="c">C. {{$rowsoaljenis->c}}</p>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p name="d[{{$rowsoaljenis->id}}]" id="d">D. {{$rowsoaljenis->d}}</p>
+                                                            </div>
+                                                            <div class="col-md-12"><br>
+                                                                <p style="margin-bottom:2px;">Jawab :</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="a[{{$rowsoaljenis->id}}]" value="A">
+                                                                <label for="a[{{$rowsoaljenis->id}}]">A</label>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="b[{{$rowsoaljenis->id}}]" value="B">
+                                                                <label for="b[{{$rowsoaljenis->id}}]">B</label>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="c[{{$rowsoaljenis->id}}]" value="C">
+                                                                <label for="c[{{$rowsoaljenis->id}}]">C</label>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="d[{{$rowsoaljenis->id}}]" value="D">
+                                                                <label for="d[{{$rowsoaljenis->id}}]">D</label>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            @endif
+                                                @endif
+                                                @endforeach
+
+
+                                                @foreach($soaljenis as $rowsoaljenis)
+                                                @if($rowsoaljenis->tipe_soal == 'YaTidak')
+                                                <div class="card card-warning">
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <input type="hidden" name="id_soal[{{$rowsoaljenis->id}}]" value="{{$rowsoaljenis->id}}">
+                                                            <input type="hidden" name="tipe_soal[{{$rowsoaljenis->id}}]" id="tipe_soal" value="YaTidak" class="form-control">
+                                                            <div class="col-md-12">
+                                                                <p name="soal[{{$rowsoaljenis->id}}]" id="soal[{{$rowsoaljenis->id}}]">{{$no++}}. {{$rowsoaljenis->soal}}</p>
+                                                            </div><br>
+                                                            <div class="col-md-12"><br>
+                                                                <p style="margin-bottom:2px;">Jawab :</p>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="ya[{{$rowsoaljenis->id}}]" value="Ya">
+                                                                <label for="ya[{{$rowsoaljenis->id}}]">Ya</label>
+                                                            </div>
+                                                            <div class="col-md-1">
+                                                                <input type="radio" name="jawaban[{{$rowsoaljenis->id}}]" id="tidak[{{$rowsoaljenis->id}}]" value="Tidak">
+                                                                <label for="tidak[{{$rowsoaljenis->id}}]">Tidak</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endif
+                                                @endforeach
                                             @endforeach
-                                        @endforeach
+                                        </div>
+                                        <div class="box-footer mt20">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
                                     </div>
-                                    <div class="box-footer mt20">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                @else
+                                    <div class="box">
+                                        @php
+                                        $hasil = DB::table('test')->where('id_user', Auth::user()->id)->get();
+                                        @endphp
+                                        <?php $no=1; ?>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tahapan</th>
+                                                    <th>Jenis Soal</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            @foreach($hasil as $rowhasil)
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{$no++}}</td>
+                                                    <td>{{$rowhasil->jenis_soal}}</td>
+                                                    <td>{{$rowhasil->status}}</td>
+                                                </tr>
+                                            </tbody>
+                                            @endforeach
+                                        </table>
                                     </div>
-                                </div>
+                                @endif
 
                             </form>
                         </div>
