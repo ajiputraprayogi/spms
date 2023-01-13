@@ -78,6 +78,7 @@ class TestController extends Controller
 
         $jenis = DB::table('soal')->where('id', $idsoal)->first();
         $test = Test::where([['id_user', Auth::user()->id],['jenis_soal', $jenis->jenis_soal]])->update([
+            'nilai' => $nilai,
             'status' => $status
         ]);
 

@@ -41,8 +41,10 @@
 
                                 @php
                                     $ceksoal = DB::table('test')->where([['id_user', Auth::user()->id],['status','Belum']])->first();
+                                    $tahap = DB::table('test')->where([['id_user', Auth::user()->id],['status','!=','Belum']])->count();
                                 @endphp
                                 @if(!empty($ceksoal))
+                                    <h5 class="text-bold">Tahap {{$tahap+1}}</h5>
                                     <div class="box box-info padding-1">
                                         <div class="box-body">
                                             @foreach($tests as $rowtests)
@@ -144,7 +146,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Tahapan</th>
-                                                    <th>Jenis Soal</th>
+                                                    <th>Nilai</th>
                                                     <th>Status</th>
                                                 </tr>
                                             </thead>
@@ -152,7 +154,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>{{$no++}}</td>
-                                                    <td>{{$rowhasil->jenis_soal}}</td>
+                                                    <td>{{$rowhasil->nilai}}</td>
                                                     <td>{{$rowhasil->status}}</td>
                                                 </tr>
                                             </tbody>

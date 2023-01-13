@@ -58,52 +58,153 @@ class DataPendidikanController extends Controller
                 ->with('success', 'DataPendidikan created successfully.');
         }else{
             $finalkode = DataDiri::where('user_id', $request->user_id)->first();
+
+            // Berkas
+            if(!$_FILES["sd_berkas"]["error"] == 4) {
+                $nameland=$request->file('sd_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $sd_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/sd_berkas');
+                $request->file('sd_berkas')->move($destination,$sd_berkas);
+            }else{
+                $sd_berkas = '';
+            }
+
+            if(!$_FILES["smp_berkas"]["error"] == 4) {
+                $nameland=$request->file('smp_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $smp_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/smp_berkas');
+                $request->file('smp_berkas')->move($destination,$smp_berkas);
+            }else{
+                $smp_berkas = '';
+            }
+
+            if(!$_FILES["sma_berkas"]["error"] == 4) {
+                $nameland=$request->file('sma_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $sma_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/sma_berkas');
+                $request->file('sma_berkas')->move($destination,$sma_berkas);
+            }else{
+                $sma_berkas = '';
+            }
+
+            if(!$_FILES["dsatu_berkas"]["error"] == 4) {
+                $nameland=$request->file('dsatu_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $dsatu_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/dsatu_berkas');
+                $request->file('dsatu_berkas')->move($destination,$dsatu_berkas);
+            }else{
+                $dsatu_berkas = '';
+            }
+
+            if(!$_FILES["ddua_berkas"]["error"] == 4) {
+                $nameland=$request->file('ddua_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $ddua_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/ddua_berkas');
+                $request->file('ddua_berkas')->move($destination,$ddua_berkas);
+            }else{
+                $ddua_berkas = '';
+            }
+
+            if(!$_FILES["dtiga_berkas"]["error"] == 4) {
+                $nameland=$request->file('dtiga_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $dtiga_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/dtiga_berkas');
+                $request->file('dtiga_berkas')->move($destination,$dtiga_berkas);
+            }else{
+                $dtiga_berkas = '';
+            }
+
+            if(!$_FILES["ssatu_berkas"]["error"] == 4) {
+                $nameland=$request->file('ssatu_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $ssatu_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/ssatu_berkas');
+                $request->file('ssatu_berkas')->move($destination,$ssatu_berkas);
+            }else{
+                $ssatu_berkas = '';
+            }
+
+            if(!$_FILES["sdua_berkas"]["error"] == 4) {
+                $nameland=$request->file('sdua_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $sdua_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/sdua_berkas');
+                $request->file('sdua_berkas')->move($destination,$sdua_berkas);
+            }else{
+                $sdua_berkas = '';
+            }
+
+            if(!$_FILES["stiga_berkas"]["error"] == 4) {
+                $nameland=$request->file('stiga_berkas')->getClientOriginalname();
+                $lower_file_name=strtolower($nameland);
+                $replace_space=str_replace(' ', '-', $lower_file_name);
+                $stiga_berkas=time().'-'.$replace_space;
+                $destination=public_path('img/stiga_berkas');
+                $request->file('stiga_berkas')->move($destination,$stiga_berkas);
+            }else{
+                $stiga_berkas = '';
+            }
+
             $dataPendidikan = DB::table('data_pendidikan')->insert([
                 'fk' => $finalkode->fk,
                 'user_id' => $request->user_id,
                 'sd' => $request->sd,
                 'sd_tahun_lulus' => $request->sd_tahun_lulus,
                 'sd_nilai_akhir' => $request->sd_nilai_akhir,
-                'sd_berkas' => $request->sd_berkas,
+                'sd_berkas' => $sd_berkas,
                 'smp' => $request->smp,
                 'smp_tahun_lulus' => $request->smp_tahun_lulus,
                 'smp_nilai_akhir' => $request->smp_nilai_akhir,
-                'smp_berkas' => $request->smp_berkas,
+                'smp_berkas' => $smp_berkas,
                 'sma' => $request->sma,
                 'sma_jurusan' => $request->sma_jurusan,
                 'sma_tahun_lulus' => $request->sma_tahun_lulus,
                 'sma_nilai_akhir' => $request->sma_nilai_akhir,
-                'sma_berkas' => $request->sma_berkas,
+                'sma_berkas' => $sma_berkas,
                 'dsatu' => $request->dsatu,
                 'dsatu_jurusan' => $request->dsatu_jurusan,
                 'dsatu_tahun_lulus' => $request->dsatu_tahun_lulus,
                 'dsatu_nilai_akhir' => $request->dsatu_nilai_akhir,
-                'dsatu_berkas' => $request->dsatu_berkas,
+                'dsatu_berkas' => $dsatu_berkas,
                 'ddua' => $request->ddua,
                 'ddua_jurusan' => $request->ddua_jurusan,
                 'ddua_tahun_lulus' => $request->ddua_tahun_lulus,
                 'ddua_nilai_akhir' => $request->ddua_nilai_akhir,
-                'ddua_berkas' => $request->ddua_berkas,
+                'ddua_berkas' => $ddua_berkas,
                 'dtiga' => $request->dtiga,
                 'dtiga_jurusan' => $request->dtiga_jurusan,
                 'dtiga_tahun_lulus' => $request->dtiga_tahun_lulus,
                 'dtiga_nilai_akhir' => $request->dtiga_nilai_akhir,
-                'dtiga_berkas' => $request->dtiga_berkas,
+                'dtiga_berkas' => $dtiga_berkas,
                 'ssatu' => $request->ssatu,
                 'ssatu_jurusan' => $request->ssatu_jurusan,
                 'ssatu_tahun_lulus' => $request->ssatu_tahun_lulus,
                 'ssatu_nilai_akhir' => $request->ssatu_nilai_akhir,
-                'ssatu_berkas' => $request->ssatu_berkas,
+                'ssatu_berkas' => $ssatu_berkas,
                 'sdua' => $request->sdua,
                 'sdua_jurusan' => $request->sdua_jurusan,
                 'sdua_tahun_lulus' => $request->sdua_tahun_lulus,
                 'sdua_nilai_akhir' => $request->sdua_nilai_akhir,
-                'sdua_berkas' => $request->sdua_berkas,
+                'sdua_berkas' => $sdua_berkas,
                 'stiga' => $request->stiga,
                 'stiga_jurusan' => $request->stiga_jurusan,
                 'stiga_tahun_lulus' => $request->stiga_tahun_lulus,
                 'stiga_nilai_akhir' => $request->stiga_nilai_akhir,
-                'stiga_berkas' => $request->stiga_berkas,
+                'stiga_berkas' => $stiga_berkas,
                 'bahasa_asing' => $request->bahasa_asing
             ]);
             for($i=0; $i < count($request->nonakademik_satu); $i++){

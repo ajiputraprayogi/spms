@@ -24,6 +24,7 @@ class Jabatan extends Model
     'id_perusahaan' => 'required',
 		'kode' => 'required',
 		'nama' => 'required',
+    'minimal_pendidikan' => 'required'
     ];
 
     protected $perPage = 20;
@@ -33,7 +34,7 @@ class Jabatan extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_perusahaan','kode','nama'];
+    protected $fillable = ['id_perusahaan','kode','nama','minimal_pendidikan'];
 
 
 

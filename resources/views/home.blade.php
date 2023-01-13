@@ -383,23 +383,51 @@ ul.checkout-bar a {
                                         <input type="hidden" name="user_id" value="{{Auth::user()->id}}" readonly required>
                                         <div class="card">
                                           <div class="card-body">
+                                            @php
+                                              $jabatanygdilamar = Auth::user()->id_jabatan;
+                                              $minimalpendidikan = DB::table('jabatan')->where('id', $jabatanygdilamar)->get('minimal_pendidikan');
+                                              foreach($minimalpendidikan as $rowminimalpendidikan){
+                                                if($rowminimalpendidikan->minimal_pendidikan == 'SD'){
+                                                  $required = (int)'1';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'SMP'){
+                                                  $required = (int)'2';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'SMA'){
+                                                  $required = (int)'3';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'D1'){
+                                                  $required = (int)'4';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'D2'){
+                                                  $required = (int)'5';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'D3'){
+                                                  $required = (int)'6';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'S1'){
+                                                  $required = (int)'7';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'S2'){
+                                                  $required = (int)'8';
+                                                }else if($rowminimalpendidikan->minimal_pendidikan == 'S3'){
+                                                  $required = (int)'9';
+                                                }else{
+                                                  $required = (int)'0';
+                                                }
+                                              }
+                                              
+                                            @endphp
                                             <div class="form-group">
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SD</label>
-                                                  <input type="text" name="sd" class="form-control">
+                                                  <input type="text" name="sd" class="form-control" @if($required >= 1) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="sd_tahun_lulus" class="form-control">
+                                                  <input type="text" name="sd_tahun_lulus" class="form-control" @if($required >= 1) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="sd_nilai_akhir" class="form-control">
+                                                  <input type="text" name="sd_nilai_akhir" class="form-control" @if($required >= 1) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="sd_berkas" class="form-control">
+                                                  <input type="file" name="sd_berkas" class="form-control" @if($required >= 1) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -411,19 +439,19 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SMP</label>
-                                                  <input type="text" name="smp" class="form-control">
+                                                  <input type="text" name="smp" class="form-control" @if($required >= 2) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="smp_tahun_lulus" class="form-control">
+                                                  <input type="text" name="smp_tahun_lulus" class="form-control" @if($required >= 2) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="smp_nilai_akhir" class="form-control">
+                                                  <input type="text" name="smp_nilai_akhir" class="form-control" @if($required >= 2) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="smp_berkas" class="form-control">
+                                                  <input type="file" name="smp_berkas" class="form-control" @if($required >= 2) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -435,23 +463,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">SMA</label>
-                                                  <input type="text" name="sma" class="form-control">
+                                                  <input type="text" name="sma" class="form-control" @if($required >= 3) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="sma_jurusan" class="form-control">
+                                                  <input type="text" name="sma_jurusan" class="form-control" @if($required >= 3) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="sma_tahun_lulus" class="form-control">
+                                                  <input type="text" name="sma_tahun_lulus" class="form-control" @if($required >= 3) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="sma_nilai_akhir" class="form-control">
+                                                  <input type="text" name="sma_nilai_akhir" class="form-control" @if($required >= 3) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="sma_berkas" class="form-control">
+                                                  <input type="file" name="sma_berkas" class="form-control" @if($required >= 3) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -463,23 +491,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D1</label>
-                                                  <input type="text" name="dsatu" class="form-control">
+                                                  <input type="text" name="dsatu" class="form-control" @if($required >= 4) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="dsatu_jurusan" class="form-control">
+                                                  <input type="text" name="dsatu_jurusan" class="form-control" @if($required >= 4) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="dsatu_tahun_lulus" class="form-control">
+                                                  <input type="text" name="dsatu_tahun_lulus" class="form-control" @if($required >= 4) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="dsatu_nilai_akhir" class="form-control">
+                                                  <input type="text" name="dsatu_nilai_akhir" class="form-control" @if($required >= 4) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="dsatu_berkas" class="form-control">
+                                                  <input type="file" name="dsatu_berkas" class="form-control" @if($required >= 4) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -491,23 +519,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D2</label>
-                                                  <input type="text" name="ddua" class="form-control">
+                                                  <input type="text" name="ddua" class="form-control" @if($required >= 5) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="ddua_jurusan" class="form-control">
+                                                  <input type="text" name="ddua_jurusan" class="form-control" @if($required >= 5) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="ddua_tahun_lulus" class="form-control">
+                                                  <input type="text" name="ddua_tahun_lulus" class="form-control" @if($required >= 5) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="ddua_nilai_akhir" class="form-control">
+                                                  <input type="text" name="ddua_nilai_akhir" class="form-control" @if($required >= 5) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="ddua_berkas" class="form-control">
+                                                  <input type="file" name="ddua_berkas" class="form-control" @if($required >= 5) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -519,23 +547,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">D3</label>
-                                                  <input type="text" name="dtiga" class="form-control">
+                                                  <input type="text" name="dtiga" class="form-control" @if($required >= 6) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="dtiga_jurusan" class="form-control">
+                                                  <input type="text" name="dtiga_jurusan" class="form-control" @if($required >= 6) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="dtiga_tahun_lulus" class="form-control">
+                                                  <input type="text" name="dtiga_tahun_lulus" class="form-control" @if($required >= 6) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="dtiga_nilai_akhir" class="form-control">
+                                                  <input type="text" name="dtiga_nilai_akhir" class="form-control" @if($required >= 6) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="dtiga_berkas" class="form-control">
+                                                  <input type="file" name="dtiga_berkas" class="form-control" @if($required >= 6) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -547,23 +575,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S1</label>
-                                                  <input type="text" name="ssatu" class="form-control">
+                                                  <input type="text" name="ssatu" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="ssatu_jurusan" class="form-control">
+                                                  <input type="text" name="ssatu_jurusan" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="ssatu_tahun_lulus" class="form-control">
+                                                  <input type="text" name="ssatu_tahun_lulus" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="ssatu_nilai_akhir" class="form-control">
+                                                  <input type="text" name="ssatu_nilai_akhir" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="ssatu_jurusan" class="form-control">
+                                                  <input type="file" name="ssatu_jurusan" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -575,23 +603,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S2</label>
-                                                  <input type="text" name="sdua" class="form-control">
+                                                  <input type="text" name="sdua" class="form-control" @if($required >= 8) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="sdua_jurusan" class="form-control">
+                                                  <input type="text" name="sdua_jurusan" class="form-control" @if($required >= 8) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="sdua_tahun_lulus" class="form-control">
+                                                  <input type="text" name="sdua_tahun_lulus" class="form-control" @if($required >= 8) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="sdua_nilai_akhir" class="form-control">
+                                                  <input type="text" name="sdua_nilai_akhir" class="form-control" @if($required >= 8) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="sdua_berkas" class="form-control">
+                                                  <input type="file" name="sdua_berkas" class="form-control" @if($required >= 8) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -603,23 +631,23 @@ ul.checkout-bar a {
                                               <div class="row">
                                                 <div class="col-md-3">
                                                   <label for="">S3</label>
-                                                  <input type="text" name="stiga" class="form-control">
+                                                  <input type="text" name="stiga" class="form-control" @if($required >= 9) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Jurusan</label>
-                                                  <input type="text" name="stiga_jurusan" class="form-control">
+                                                  <input type="text" name="stiga_jurusan" class="form-control" @if($required >= 9) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Tahun Lulus</label>
-                                                  <input type="text" name="stiga_tahun_lulus" class="form-control">
+                                                  <input type="text" name="stiga_tahun_lulus" class="form-control" @if($required >= 9) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Nilai Akhir</label>
-                                                  <input type="text" name="stiga_nilai_akhir" class="form-control">
+                                                  <input type="text" name="stiga_nilai_akhir" class="form-control" @if($required >= 9) required @endif>
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="stiga_berkas" class="form-control">
+                                                  <input type="file" name="stiga_berkas" class="form-control" @if($required >= 9) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -632,16 +660,23 @@ ul.checkout-bar a {
                                                     <tbody>
                                                         <tr>
                                                             <td>
-                                                                <input type="text" class="form-control" name="nonakademik_satu[]">
+                                                              <input type="text" class="form-control" name="nonakademik_satu[]">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" name="nonakademik_dua[]">
+                                                              <input type="text" class="form-control" name="nonakademik_dua[]">
                                                             </td>
                                                             <td>
-                                                                <input type="text" class="form-control" name="nonakademik_tiga[]">
+                                                              <input type="text" class="form-control" name="nonakademik_tiga[]">
                                                             </td>
                                                             <td>
-                                                                <input type="file" class="form-control" name="nonakademik_berkas[]">
+                                                              <select name="level[]" id="level[]" class="form-control">
+                                                                <option value="Basic">Basic</option>
+                                                                <option value="Intermediate">Intermediate</option>
+                                                                <option value="Advance">Advance</option>
+                                                              </select>
+                                                            </td>
+                                                            <td>
+                                                              <input type="file" class="form-control" name="nonakademik_berkas[]">
                                                             </td>
                                                             <td class="text-center">
                                                                 <button class="btn btn-sm float-right btn-info" id="add_tr"
@@ -655,26 +690,59 @@ ul.checkout-bar a {
                                         <div class="card">
                                           <div class="card-body">
                                               <label for="">Bahasa Asing</label>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris">
-                                                  <label class="form-check-label" for="Inggris">
-                                                      Inggris
-                                                  </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin">
-                                                  <label class="form-check-label" for="Mandarin">
-                                                      Mandarin
-                                                  </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea">
-                                                  <label class="form-check-label" for="Korea">
-                                                      Korea
-                                                  </label>
-                                              </div>
+                                                <div class="form-row align-items-center">
+                                                  <div class="col-auto my-1">
+                                                    <div class="form-check">
+                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris">
+                                                      <label class="form-check-label" for="Inggris">
+                                                        Inggris
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-sm-3 my-1">
+                                                    <select name="level[]" id="inggris" class="form-control" style="display:none;">
+                                                      <option value="Basic">Basic</option>
+                                                      <option value="Intermediate">Intermediate</option>
+                                                      <option value="Advance">Advance</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                                <div class="form-row align-items-center">
+                                                  <div class="col-auto my-1">
+                                                    <div class="form-check">
+                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin">
+                                                      <label class="form-check-label" for="Mandarin">
+                                                          Mandarin
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-sm-3 my-1">
+                                                    <select name="level[]" id="mandarin" class="form-control" style="display:none;">
+                                                      <option value="Basic">Basic</option>
+                                                      <option value="Intermediate">Intermediate</option>
+                                                      <option value="Advance">Advance</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                                <div class="form-row align-items-center">
+                                                  <div class="col-auto my-1">
+                                                    <div class="form-check">
+                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea">
+                                                      <label class="form-check-label" for="Korea">
+                                                          Korea
+                                                      </label>
+                                                    </div>
+                                                  </div>
+                                                  <div class="col-sm-3 my-1">
+                                                    <select name="level[]" id="korea" class="form-control" style="display:none;">
+                                                      <option value="Basic">Basic</option>
+                                                      <option value="Intermediate">Intermediate</option>
+                                                      <option value="Advance">Advance</option>
+                                                    </select>
+                                                  </div>
+                                                </div>
+                                            </div>
                                           </div>
-                                        </div>
                                         <div class="card">
                                             <div class="card-body">
                                                 <label for="">Pengalaman Kerja</label>
@@ -1368,6 +1436,7 @@ ul.checkout-bar a {
 
                               <div class="card-footer text-right">
                                 <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
+                                <a href="{{url('/test')}}" class="btn btn-warning">Test</a>
                               </div>
                             </form>
                             </div>
@@ -1464,5 +1533,28 @@ ul.checkout-bar a {
         function deletetr2(id) {
             document.getElementById("tr2_" + id).remove();
         }
+    </script>
+    <script>
+      $('#Inggris').change(function(){
+        if($(this).prop('checked')){
+          $('#inggris').show();
+        }else{
+          $('#inggris').hide();
+        }
+      });
+      $('#Mandarin').change(function(){
+        if($(this).prop('checked')){
+          $('#mandarin').show();
+        }else{
+          $('#mandarin').hide();
+        }
+      });
+      $('#Korea').change(function(){
+        if($(this).prop('checked')){
+          $('#korea').show();
+        }else{
+          $('#korea').hide();
+        }
+      });
     </script>
 @endpush
