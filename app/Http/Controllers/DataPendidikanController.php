@@ -159,6 +159,20 @@ class DataPendidikanController extends Controller
                 $stiga_berkas = '';
             }
 
+            if(empty($request->bahasa_asing)){
+                $newbahasaasing = '';
+            }else{
+                $bahasaasing = [];
+                for($i=0; $i < count($request->bahasa_asing); $i++){
+                    if(empty($request->bahasa_asing)){
+                        $bahasaasing = '';
+                    }else{
+                        array_push($bahasaasing, $request->bahasa_asing[$i] . ' Level ' . $request->level_bahasa_asing[$i]);
+                    }
+                }
+                $newbahasaasing = implode(',', $bahasaasing);
+            }
+
             $dataPendidikan = DB::table('data_pendidikan')->insert([
                 'fk' => $finalkode->fk,
                 'user_id' => $request->user_id,
@@ -205,38 +219,60 @@ class DataPendidikanController extends Controller
                 'stiga_tahun_lulus' => $request->stiga_tahun_lulus,
                 'stiga_nilai_akhir' => $request->stiga_nilai_akhir,
                 'stiga_berkas' => $stiga_berkas,
-                'bahasa_asing' => $request->bahasa_asing
+                'bahasa_asing' => $newbahasaasing
             ]);
             for($i=0; $i < count($request->nonakademik_satu); $i++){
-                if(empty($request->nonakademik_berkas)){
+                if(empty($request->nonakademik_berkas[$i])){
                     $nonakademikberkas = '';
                 }else{
                     $nonakademikberkas = $request->nonakademik_berkas[$i];
+                    if(!$_FILES["nonakademik_berkas"]["error"][$i] == 4) {
+                        $nameland=$request->file('nonakademik_berkas')[$i]->getClientOriginalname();
+                        $lower_file_name=strtolower($nameland);
+                        $replace_space=str_replace(' ', '-', $lower_file_name);
+                        $nonakademik_berkas=time().'-'.$replace_space;
+                        $destination=public_path('img/nonakademik_berkas');
+                        $request->file('nonakademik_berkas')[$i]->move($destination,$nonakademik_berkas);
+                    }else{
+                        $nonakademik_berkas = '';
+                    }
+
+                    DB::table('nonakademik')->insert([
+                        'fk' => $finalkode->fk,
+                        'user_id' => $request->user_id,
+                        'nonakademik_satu' => $request->nonakademik_satu[$i],
+                        'nonakademik_dua' => $request->nonakademik_dua[$i],
+                        'nonakademik_tiga' => $request->nonakademik_tiga[$i],
+                        'nonakademik_level' => $request->nonakademik_level[$i],
+                        'nonakademik_berkas' => $nonakademik_berkas
+                    ]);
                 }
-                DB::table('nonakademik')->insert([
-                    'fk' => $finalkode->fk,
-                    'user_id' => $request->user_id,
-                    'nonakademik_satu' => $request->nonakademik_satu[$i],
-                    'nonakademik_dua' => $request->nonakademik_dua[$i],
-                    'nonakademik_tiga' => $request->nonakademik_tiga[$i],
-                    'nonakademik_berkas' => $nonakademikberkas
-                ]);
             }
             for($j=0; $j < count($request->nama_perusahaan); $j++){
                 if(empty($request->pengalaman_berkas)){
                     $pengalamanberkas = '';
                 }else{
                     $pengalamanberkas = $request->pengalaman_berkas[$j];
+                    if(!$_FILES["pengalaman_berkas"]["error"][$i] == 4) {
+                        $nameland=$request->file('pengalaman_berkas')[$i]->getClientOriginalname();
+                        $lower_file_name=strtolower($nameland);
+                        $replace_space=str_replace(' ', '-', $lower_file_name);
+                        $pengalaman_berkas=time().'-'.$replace_space;
+                        $destination=public_path('img/pengalaman_berkas');
+                        $request->file('pengalaman_berkas')[$i]->move($destination,$pengalaman_berkas);
+                    }else{
+                        $pengalaman_berkas = '';
+                    }
+                    DB::table('pengalaman_kerja')->insert([
+                        'fk' => $finalkode->fk,
+                        'user_id' => $request->user_id,
+                        'nama_perusahaan' => $request->nama_perusahaan[$j],
+                        'jabatan' => $request->jabatan[$j],
+                        'lama_bekerja' => $request->lama_bekerja[$j],
+                        'tahun' => $request->tahun[$j],
+                        'pengalaman_berkas' => $pengalaman_berkas
+                    ]);
                 }
-                DB::table('pengalaman_kerja')->insert([
-                    'fk' => $finalkode->fk,
-                    'user_id' => $request->user_id,
-                    'nama_perusahaan' => $request->nama_perusahaan[$j],
-                    'jabatan' => $request->jabatan[$j],
-                    'lama_bekerja' => $request->lama_bekerja[$j],
-                    'tahun' => $request->tahun[$j],
-                    'pengalaman_berkas' => $pengalamanberkas
-                ]);
             }
 
             return redirect()->route('home');

@@ -591,7 +591,7 @@ ul.checkout-bar a {
                                                 </div>
                                                 <div class="col-md-3">
                                                   <label for="">Berkas</label>
-                                                  <input type="file" name="ssatu_jurusan" class="form-control" @if($required >= 7) required @endif>
+                                                  <input type="file" name="ssatu_berkas" class="form-control" @if($required >= 7) required @endif>
                                                 </div>
                                               </div>
                                             </div>
@@ -669,7 +669,7 @@ ul.checkout-bar a {
                                                               <input type="text" class="form-control" name="nonakademik_tiga[]">
                                                             </td>
                                                             <td>
-                                                              <select name="level[]" id="level[]" class="form-control">
+                                                              <select name="nonakademik_level[]" id="nonakademik_level[]" class="form-control">
                                                                 <option value="Basic">Basic</option>
                                                                 <option value="Intermediate">Intermediate</option>
                                                                 <option value="Advance">Advance</option>
@@ -693,52 +693,40 @@ ul.checkout-bar a {
                                                 <div class="form-row align-items-center">
                                                   <div class="col-auto my-1">
                                                     <div class="form-check">
-                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris">
+                                                      <input class="form-check-input" name="bahasa_asing[]" type="checkbox" value="Inggris" id="Inggris">
                                                       <label class="form-check-label" for="Inggris">
                                                         Inggris
                                                       </label>
                                                     </div>
                                                   </div>
-                                                  <div class="col-sm-3 my-1">
-                                                    <select name="level[]" id="inggris" class="form-control" style="display:none;">
-                                                      <option value="Basic">Basic</option>
-                                                      <option value="Intermediate">Intermediate</option>
-                                                      <option value="Advance">Advance</option>
-                                                    </select>
+                                                  <div class="col-sm-3 my-1" id="divinggris">
+                                                    
                                                   </div>
                                                 </div>
                                                 <div class="form-row align-items-center">
                                                   <div class="col-auto my-1">
                                                     <div class="form-check">
-                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin">
+                                                      <input class="form-check-input" name="bahasa_asing[]" type="checkbox" value="Mandarin" id="Mandarin">
                                                       <label class="form-check-label" for="Mandarin">
                                                           Mandarin
                                                       </label>
                                                     </div>
                                                   </div>
-                                                  <div class="col-sm-3 my-1">
-                                                    <select name="level[]" id="mandarin" class="form-control" style="display:none;">
-                                                      <option value="Basic">Basic</option>
-                                                      <option value="Intermediate">Intermediate</option>
-                                                      <option value="Advance">Advance</option>
-                                                    </select>
+                                                  <div class="col-sm-3 my-1" id="divmandarin">
+                                                    
                                                   </div>
                                                 </div>
                                                 <div class="form-row align-items-center">
                                                   <div class="col-auto my-1">
                                                     <div class="form-check">
-                                                      <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea">
+                                                      <input class="form-check-input" name="bahasa_asing[]" type="checkbox" value="Korea" id="Korea">
                                                       <label class="form-check-label" for="Korea">
                                                           Korea
                                                       </label>
                                                     </div>
                                                   </div>
-                                                  <div class="col-sm-3 my-1">
-                                                    <select name="level[]" id="korea" class="form-control" style="display:none;">
-                                                      <option value="Basic">Basic</option>
-                                                      <option value="Intermediate">Intermediate</option>
-                                                      <option value="Advance">Advance</option>
-                                                    </select>
+                                                  <div class="col-sm-3 my-1" id="divkorea">
+                                                    
                                                   </div>
                                                 </div>
                                             </div>
@@ -1436,7 +1424,7 @@ ul.checkout-bar a {
 
                               <div class="card-footer text-right">
                                 <button type="button" onclick="kembali_databerkas()" class="btn btn-danger float-left">Kembali</button>
-                                <a href="{{url('/test')}}" class="btn btn-warning">Test</a>
+                                <a href="{{url('/test')}}" class="btn btn-warning">Lanjut Test</a>
                               </div>
                             </form>
                             </div>
@@ -1494,6 +1482,13 @@ ul.checkout-bar a {
                     `<input type="text" class="form-control" name="nonakademik_tiga[]">` +
                 `</td>` +
                 `<td>` +
+                  `<select name="nonakademik_level[]" id="nonakademik_level[]" class="form-control">` +
+                    `<option value="Basic">Basic</option>` +
+                    `<option value="Intermediate">Intermediate</option>` +
+                    `<option value="Advance">Advance</option>` +
+                  `</select>` +
+                `</td>` +
+                `<td>` +
                     `<input type="file" class="form-control" name="nonakademik_berkas[]">` +
                 `</td>` +
                 `<td class="text-center">` +
@@ -1537,23 +1532,41 @@ ul.checkout-bar a {
     <script>
       $('#Inggris').change(function(){
         if($(this).prop('checked')){
-          $('#inggris').show();
+          var SelectInggris = 
+          `<select name="level_bahasa_asing[]" id="inggris" class="form-control">` +
+            `<option value="Basic">Basic</option>` +
+            `<option value="Intermediate">Intermediate</option>` +
+            `<option value="Advance">Advance</option>` +
+          `</select>`;
+          $('#divinggris').append(SelectInggris);
         }else{
-          $('#inggris').hide();
+          $('#inggris').remove();
         }
       });
       $('#Mandarin').change(function(){
         if($(this).prop('checked')){
-          $('#mandarin').show();
+          var SelectMandarin =
+          `<select name="level_bahasa_asing[]" id="mandarin" class="form-control">` +
+            `<option value="Basic">Basic</option>` +
+            `<option value="Intermediate">Intermediate</option>` +
+            `<option value="Advance">Advance</option>` +
+          `</select>`;
+          $('#divmandarin').append(SelectMandarin);
         }else{
-          $('#mandarin').hide();
+          $('#mandarin').remove();
         }
       });
       $('#Korea').change(function(){
         if($(this).prop('checked')){
-          $('#korea').show();
+          var SelectKorea =
+          `<select name="level_bahasa_asing[]" id="korea" class="form-control">` +
+            `<option value="Basic">Basic</option>` +
+            `<option value="Intermediate">Intermediate</option>` +
+            `<option value="Advance">Advance</option>` +
+          `</select>`;
+          $('#divkorea').append(SelectKorea);
         }else{
-          $('#korea').hide();
+          $('#korea').remove();
         }
       });
     </script>
