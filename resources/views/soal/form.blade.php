@@ -25,6 +25,10 @@
             <label for="">Minimal Score</label>
             <input type="number" name="minimal_score" id="minimal_score" placeholder="Minimal Score" class="form-control">
         </div>
+        <div class="form-group">
+            <label for="">Waktu (menit)</label>
+            <input type="number" name="waktu" id="waktu" placeholder="Waktu" class="form-control">
+        </div>
 
     </div>
     <div class="box-footer mt20">

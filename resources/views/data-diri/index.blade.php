@@ -79,7 +79,7 @@
                                             <td class="text-center">
                                                 <form action="{{ route('data-diri.destroy',$dataDiri->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('data-diri.show',$dataDiri->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('data-diri.edit',$dataDiri->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <!-- <a class="btn btn-sm btn-success" href="{{ route('data-diri.edit',$dataDiri->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a> -->
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

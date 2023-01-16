@@ -31,7 +31,7 @@ class Soal extends Model
      *
      * @var array
      */
-    protected $fillable = ['jenis_soal','jumlah_soal_abc','jumlah_soal_yt','status','minimal_score','soal','tipe_soal','a','b','c','d','jawaban'];
+    protected $fillable = ['jenis_soal','jumlah_soal_abc','jumlah_soal_yt','status','minimal_score','soal','tipe_soal','a','b','c','d','jawaban','waktu'];
 
 
 

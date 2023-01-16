@@ -60,6 +60,7 @@
 										<th>Jumlah Soal Ya/Tidak</th>
 										<th>Status</th>
                                         <th>Minimal Score</th>
+                                        <th>Waktu</th>
 
                                         <th class="text-center">Aksi</th>
                                     </tr>
@@ -74,6 +75,7 @@
 											<td>{{ $soal->jumlah_soal_yt }}</td>
 											<td>{{ $soal->status }}</td>
 											<td>{{ $soal->minimal_score }}</td>
+                                            <td>{{ $soal->waktu . " Menit" }}</td>
 
                                             <td class="text-center">
                                                 <form action="{{ route('soal.destroy',$soal->id) }}" method="POST">

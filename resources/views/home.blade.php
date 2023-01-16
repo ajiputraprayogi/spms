@@ -1300,23 +1300,29 @@ ul.checkout-bar a {
                                         <div class="card">
                                           <div class="card-body">
                                               <label for="">Bahasa Asing</label>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Inggris" id="Inggris" @if($data->bahasa_asing == 'Inggris') checked @endif readonly>
-                                                  <label class="form-check-label" for="Inggris">
-                                                      Inggris
-                                                  </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Mandarin" id="Mandarin" @if($data->bahasa_asing == 'Mandarin') checked @endif readonly>
-                                                  <label class="form-check-label" for="Mandarin">
-                                                      Mandarin
-                                                  </label>
-                                              </div>
-                                              <div class="form-check">
-                                                  <input class="form-check-input" name="bahasa_asing" type="checkbox" value="Korea" id="Korea" @if($data->bahasa_asing == 'Korea') checked @endif readonly>
-                                                  <label class="form-check-label" for="Korea">
-                                                      Korea
-                                                  </label>
+                                              <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                  <thead>
+                                                    <tr>
+                                                      <th>Bahasa Asing</th>
+                                                      <th>Level</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    @php
+                                                      $bahasaasing = explode(',', $data->bahasa_asing);
+                                                    @endphp
+                                                    @foreach($bahasaasing as $rowbahasaasing)
+                                                    @php
+                                                      $newbahasaasing = explode(' Level ', $rowbahasaasing);
+                                                    @endphp
+                                                    <tr>
+                                                      <td>{{$newbahasaasing[0]}}</td>
+                                                      <td>{{$newbahasaasing[1]}}</td>
+                                                    </tr>
+                                                    @endforeach
+                                                  </tbody>
+                                                </table>
                                               </div>
                                           </div>
                                         </div>

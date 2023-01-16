@@ -120,8 +120,6 @@
                                                     <th>Portofolio</th>
                                                     <th>KTP</th>
                                                     <th>KK</th>
-                                                    <th>Ijazah Terakhir</th>
-                                                    <th>Transkrip Nilai</th>
                                                     <th>SKCK</th>
                                                 </tr>
                                             </thead>
@@ -170,20 +168,6 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        @if($dataDiri->ijazah_terakhir !='' or $dataDiri->ijazah_terakhir != null)
-                                                            {{$dataDiri->ijazah_terakhir}}
-                                                        @else
-                                                            Belum ada
-                                                        @endif
-                                                    </td>
-                                                    <td>
-                                                        @if($dataDiri->transkrip_nilai !='' or $dataDiri->transkrip_nilai != null)
-                                                            {{$dataDiri->transkrip_nilai}}
-                                                        @else
-                                                            Belum ada
-                                                        @endif
-                                                    </td>
-                                                    <td>
                                                         @if($dataDiri->skck !='' or $dataDiri->skck != null)
                                                             {{$dataDiri->skck}}
                                                         @else
@@ -192,6 +176,43 @@
                                                     </td>
                                                 </tr>
                                             </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="card card-secondary">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Hasil Test</h3>
+                                    </div>
+                                    <div class="card-body">
+                                    @php
+                                        $hasil = DB::table('test')->where('id_user', $dataDiri->user_id)->get();
+                                        @endphp
+                                        <?php $no=1; ?>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tahapan</th>
+                                                    <th>Nilai</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            @foreach($hasil as $rowhasil)
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{'Tahap ' . $no++}}</td>
+                                                    <td>
+                                                        @if($rowhasil->nilai != '')
+                                                            {{$rowhasil->nilai}} 
+                                                        @else
+                                                            - 
+                                                        @endif
+                                                    </td>
+                                                    <td>{{$rowhasil->status}}</td>
+                                                </tr>
+                                            </tbody>
+                                            @endforeach
                                         </table>
                                     </div>
                                 </div>

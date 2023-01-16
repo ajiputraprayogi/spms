@@ -90,7 +90,8 @@ class SoalController extends Controller
                 'b'=>$b,
                 'c'=>$c,
                 'd'=>$d,
-                'jawaban'=>$request->jawaban[$i]
+                'jawaban'=>$request->jawaban[$i],
+                'waktu'=>$request->waktu
             ]);
 
         }
@@ -172,7 +173,8 @@ class SoalController extends Controller
                 'b'=>$b,
                 'c'=>$c,
                 'd'=>$d,
-                'jawaban'=>$request->jawaban[$rowsoal->id]
+                'jawaban'=>$request->jawaban[$rowsoal->id],
+                'waktu'=>$request->waktu
             ]);
         }
 

@@ -44,19 +44,24 @@
                                     $tahap = DB::table('test')->where([['id_user', Auth::user()->id],['status','!=','Belum']])->count();
                                 @endphp
                                 @if(!empty($ceksoal))
+                                <div class="">
+                                    <a id="mulai" type="mulai" onclick="mulai()" hidden>Mulai</a>
+                                    <p id="waktu" style="display: none;"><b>Waktu : </b><b id="demo"></b></p>
+                                </div>
                                     <h5 class="text-bold">Tahap {{$tahap+1}}</h5>
                                     <div class="box box-info padding-1">
                                         <div class="box-body">
                                             @foreach($tests as $rowtests)
                                                 @php
-                                                    $soaljenis = DB::table('soal')->where('jenis_soal', $rowtests->jenis_soal)->get();
-                                                    foreach($soaljenis as $rowsoaljenis){
-                                                        $jumlahsoalabc = $rowsoaljenis->jumlah_soal_abc;
-                                                    }
+                                                $soaljenis = DB::table('soal')->where('jenis_soal', $rowtests->jenis_soal)->get();
+                                                foreach($soaljenis as $rowsoaljenis){
+                                                    $jumlahsoalabc = $rowsoaljenis->jumlah_soal_abc;
+                                                }
                                                 @endphp
                                                 <?php $no = 1; ?>
-
+                                                
                                                 @foreach($soaljenis as $rowsoaljenis)
+                                                <input type="hidden" name="waktu_soal" id="waktu_soal" value="{{$rowsoaljenis->waktu}}">
                                                 @if($rowsoaljenis->tipe_soal == 'Abc')
                                                 <div class="card card-primary">
                                                     <div class="card-body">
@@ -165,7 +170,6 @@
 
                             </form>
                         </div>
-                        <p id="demo"></p>
                     </div>
                 </div>
             </div>
@@ -255,31 +259,46 @@
     </div> -->
 @endsection
 <script>
-    // Mengatur waktu akhir perhitungan mundur
-    var countDownDate = new Date(new Date().setMinutes(new Date().getMinutes() + 1));
-
-    // Memperbarui hitungan mundur setiap 1 detik
-    var x = setInterval(function() {
-
-      // Untuk mendapatkan tanggal dan waktu hari ini
-      var now = new Date().getTime();
-
-      // Temukan jarak antara sekarang dan tanggal hitung mundur
-      var distance = countDownDate - now;
-
-      // Perhitungan waktu untuk hari, jam, menit dan detik
-      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Keluarkan hasil dalam elemen dengan id = "demo"
-      document.getElementById("demo").innerHTML = hours + "h "
-      + minutes + "m " + seconds + "s ";
-
-      // Jika hitungan mundur selesai, tulis beberapa teks
-      if (distance < 0) {
-        document.getElementById("btn_simpan").click();
-      }
-    }, 1000);
+    window.addEventListener("load", afterLoaded,false);
+    function afterLoaded(){
+        mulai();
+    }
+    function mulai(){
+        if (confirm("Mulai test?") == true) {
+            waktu();
+        } else {
+            window.location.href = 'backend/home';
+        }
+    }
+    function waktu(){
+        $('#waktu').show();
+        var waktusoal = parseInt($('#waktu_soal').val());
+        // Mengatur waktu akhir perhitungan mundur
+        var countDownDate = new Date(new Date().setMinutes(new Date().getMinutes() + waktusoal));
+    
+        // Memperbarui hitungan mundur setiap 1 detik
+        var x = setInterval(function() {
+    
+          // Untuk mendapatkan tanggal dan waktu hari ini
+          var now = new Date().getTime();
+    
+          // Temukan jarak antara sekarang dan tanggal hitung mundur
+          var distance = countDownDate - now;
+    
+          // Perhitungan waktu untuk hari, jam, menit dan detik
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+          // Keluarkan hasil dalam elemen dengan id = "demo"
+          document.getElementById("demo").innerHTML = hours + ":"
+          + minutes + ":" + seconds + "";
+    
+          // Jika hitungan mundur selesai, tulis beberapa teks
+          if (distance < 0) {
+            document.getElementById("btn_simpan").click();
+          }
+        }, 1000);
+    }
     </script>

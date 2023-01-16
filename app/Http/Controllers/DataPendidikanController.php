@@ -249,17 +249,17 @@ class DataPendidikanController extends Controller
                 }
             }
             for($j=0; $j < count($request->nama_perusahaan); $j++){
-                if(empty($request->pengalaman_berkas)){
+                if(empty($request->pengalaman_berkas[$j])){
                     $pengalamanberkas = '';
                 }else{
                     $pengalamanberkas = $request->pengalaman_berkas[$j];
-                    if(!$_FILES["pengalaman_berkas"]["error"][$i] == 4) {
-                        $nameland=$request->file('pengalaman_berkas')[$i]->getClientOriginalname();
+                    if(!$_FILES["pengalaman_berkas"]["error"][$j] == 4) {
+                        $nameland=$request->file('pengalaman_berkas')[$j]->getClientOriginalname();
                         $lower_file_name=strtolower($nameland);
                         $replace_space=str_replace(' ', '-', $lower_file_name);
                         $pengalaman_berkas=time().'-'.$replace_space;
                         $destination=public_path('img/pengalaman_berkas');
-                        $request->file('pengalaman_berkas')[$i]->move($destination,$pengalaman_berkas);
+                        $request->file('pengalaman_berkas')[$j]->move($destination,$pengalaman_berkas);
                     }else{
                         $pengalaman_berkas = '';
                     }

@@ -49,16 +49,17 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $idsoal = $request->id_soal;
         $jawaban = $request->jawaban;
         $soal = DB::table('soal')->whereIn('id', $idsoal)->get();
         $benar = [];
         $salah = [];
         foreach($soal as $rowsoal){
-            if($jawaban[$rowsoal->id] == $rowsoal->jawaban){
-                array_push($benar, $rowsoal->jawaban);
-            }else if(empty($jawaban[$rowsoal->id] == $rowsoal->jawaban)){
+            if(empty($jawaban[$rowsoal->id])){
                 array_push($salah, $rowsoal->jawaban);
+            }else if($jawaban[$rowsoal->id] == $rowsoal->jawaban){
+                array_push($benar, $rowsoal->jawaban);
             }else{
                 array_push($salah, $rowsoal->jawaban);
             }
