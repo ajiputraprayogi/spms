@@ -57,6 +57,8 @@ class TestController extends Controller
         foreach($soal as $rowsoal){
             if($jawaban[$rowsoal->id] == $rowsoal->jawaban){
                 array_push($benar, $rowsoal->jawaban);
+            }else if(empty($jawaban[$rowsoal->id] == $rowsoal->jawaban)){
+                array_push($salah, $rowsoal->jawaban);
             }else{
                 array_push($salah, $rowsoal->jawaban);
             }
@@ -67,7 +69,7 @@ class TestController extends Controller
         $totalsoal = count($idsoal);
         $hitung = 100/$totalsoal;
         $nilai = $hitung*$jumlahbenar;
-        
+
         if($nilai >= $minimal_score){
             $status = 'Lolos';
         }else{
