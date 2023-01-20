@@ -87,21 +87,170 @@
                                         <table class="table table-bordered table-responsive">
                                             <thead>
                                                 <tr>
-                                                    <th>Pendidikan Terakhir</th>
-                                                    <th>Asal Sekolah / Universitas:</th>
-                                                    <th>Jurusan / Program Studi</th>
-                                                    <th>Nilai Akhir / IPK</th>
+                                                    <th>Pendidikan</th>
+                                                    <th>Nama Sekolah</th>
+                                                    <th>Jurusan</th>
+                                                    <th>Tahun Lulus</th>
+                                                    <th>Nilai Akhir</th>
+                                                    <th>Berkas</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @if($dataDiri->sd !='')
                                                 <tr>
-                                                    <td>{{$dataDiri->pendidikan_terakhir}}</td>
-                                                    <td>{{$dataDiri->asal_sekolah}}</td>
-                                                    <td>{{$dataDiri->jurusan}}</td>
-                                                    <td>{{$dataDiri->nilai_akhir}}</td>
+                                                    <td>SD</td>
+                                                    <td>{{$dataDiri->sd}}</td>
+                                                    <td class="text-center">-</td>
+                                                    <td>{{$dataDiri->sd_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->sd_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->sd_berkas}}</td>
                                                 </tr>
+                                                @endif
+                                                @if($dataDiri->smp !='')
+                                                <tr>
+                                                    <td>SMP</td>
+                                                    <td>{{$dataDiri->smp}}</td>
+                                                    <td class="text-center">-</td>
+                                                    <td>{{$dataDiri->smp_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->smp_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->smp_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->sma !='')
+                                                <tr>
+                                                    <td>SMA/SMK</td>
+                                                    <td>{{$dataDiri->sma}}</td>
+                                                    <td>{{$dataDiri->sma_jurusan}}</td>
+                                                    <td>{{$dataDiri->sma_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->sma_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->sma_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->dsatu !='')
+                                                <tr>
+                                                    <td>D1</td>
+                                                    <td>{{$dataDiri->dsatu}}</td>
+                                                    <td>{{$dataDiri->dsatu_jurusan}}</td>
+                                                    <td>{{$dataDiri->dsatu_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->dsatu_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->dsatu_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->ddua !='')
+                                                <tr>
+                                                    <td>D2</td>
+                                                    <td>{{$dataDiri->ddua}}</td>
+                                                    <td>{{$dataDiri->ddua_jurusan}}</td>
+                                                    <td>{{$dataDiri->ddua_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->ddua_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->ddua_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->dtiga !='')
+                                                <tr>
+                                                    <td>D3</td>
+                                                    <td>{{$dataDiri->dtiga}}</td>
+                                                    <td>{{$dataDiri->dtiga_jurusan}}</td>
+                                                    <td>{{$dataDiri->dtiga_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->dtiga_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->dtiga_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->ssatu !='')
+                                                <tr>
+                                                    <td>S1</td>
+                                                    <td>{{$dataDiri->ssatu}}</td>
+                                                    <td>{{$dataDiri->ssatu_jurusan}}</td>
+                                                    <td>{{$dataDiri->ssatu_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->ssatu_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->ssatu_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->sdua !='')
+                                                <tr>
+                                                    <td>S2</td>
+                                                    <td>{{$dataDiri->sdua}}</td>
+                                                    <td>{{$dataDiri->sdua_jurusan}}</td>
+                                                    <td>{{$dataDiri->sdua_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->sdua_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->sdua_berkas}}</td>
+                                                </tr>
+                                                @endif
+                                                @if($dataDiri->stiga !='')
+                                                <tr>
+                                                    <td>S3</td>
+                                                    <td>{{$dataDiri->stiga}}</td>
+                                                    <td>{{$dataDiri->stiga_jurusan}}</td>
+                                                    <td>{{$dataDiri->stiga_tahun_lulus}}</td>
+                                                    <td>{{$dataDiri->stiga_nilai_akhir}}</td>
+                                                    <td>{{$dataDiri->stiga_berkas}}</td>
+                                                </tr>
+                                                @endif
                                             </tbody>
                                         </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Bahasa Asing</h3>
+                                    </div>
+                                    <div class="card-body">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Bahasa Asing</th>
+                                            <th>Level</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        @php
+                                            $bahasaasing = explode(',', $dataDiri->bahasa_asing);
+                                        @endphp
+                                        @foreach($bahasaasing as $rowbahasaasing)
+                                        @php
+                                            $newbahasaasing = explode(' Level ', $rowbahasaasing);
+                                        @endphp
+                                        <tr>
+                                            <td>{{$newbahasaasing[0]}}</td>
+                                            <td>{{$newbahasaasing[1]}}</td>
+                                        </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Nonakademik</h3>
+                                    </div>
+                                    <div class="card-body">
+                                    <table class="table table-bordered" id="tabelnonakademik">
+                                        @php
+                                        $nonakademik = DB::table('nonakademik')->where('user_id', $dataDiri->user_id)->get();
+                                        @endphp
+                                        @foreach($nonakademik as $rownonakademik)
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    {{$rownonakademik->nonakademik_satu}}
+                                                </td>
+                                                <td>
+                                                    {{$rownonakademik->nonakademik_dua }}
+                                                </td>
+                                                <td>
+                                                    {{$rownonakademik->nonakademik_tiga}}
+                                                </td>
+                                                <td>
+                                                    {{$rownonakademik->nonakademik_berkas}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        @endforeach
+                                    </table>
                                     </div>
                                 </div>
                             </div>

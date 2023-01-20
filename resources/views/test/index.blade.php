@@ -44,6 +44,7 @@
                                     $tahap = DB::table('test')->where([['id_user', Auth::user()->id],['status','!=','Belum']])->count();
                                 @endphp
                                 @if(!empty($ceksoal))
+                                <input type="hidden" name="verivikas" value="verifikasi" id="belumverifikasi">
                                 <div class="">
                                     <a id="mulai" type="mulai" onclick="mulai()" hidden>Mulai</a>
                                     <p id="waktu" style="display: none;"><b>Waktu : </b><b id="demo"></b></p>
@@ -142,6 +143,7 @@
                                         </div>
                                     </div>
                                 @else
+                                    <input type="hidden" name="verivikas" value="verifikasi" id="verifikasi">
                                     <div class="box">
                                         @php
                                         $hasil = DB::table('test')->where('id_user', Auth::user()->id)->get();
@@ -159,7 +161,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td>{{$no++}}</td>
-                                                    <td>{{$rowhasil->nilai}}</td>
+                                                    <td>{{ ceil($rowhasil->nilai) }}</td>
                                                     <td>{{$rowhasil->status}}</td>
                                                 </tr>
                                             </tbody>
@@ -261,7 +263,11 @@
 <script>
     window.addEventListener("load", afterLoaded,false);
     function afterLoaded(){
-        mulai();
+        if($('#verifikasi').val() == 'verifikasi'){
+
+        }else{
+            mulai();
+        }
     }
     function mulai(){
         if (confirm("Mulai test?") == true) {

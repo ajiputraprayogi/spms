@@ -49,7 +49,6 @@ class TestController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
         $idsoal = $request->id_soal;
         $jawaban = $request->jawaban;
         $soal = DB::table('soal')->whereIn('id', $idsoal)->get();
